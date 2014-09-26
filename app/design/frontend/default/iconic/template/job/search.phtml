@@ -1,0 +1,148 @@
+<?php //var_dump(Mage::helper('core/url')->getCurrentUrl());die; ?>
+<div id="search_results" class="clearfix">
+	<div id="page-title" class="heading">
+		<h2 class="blue-tit text-blue"><?php echo $this->__('検索結果') ?></h2>
+	</div>
+	<div class="info-search">
+		<?php if($this->getKeyword()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('タイトル') ?>:
+			<span><?php echo $this->getKeyword() ?></span>
+		</div>
+		<?php endif; ?>
+		
+		<?php if($this->hasCategory()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('業種から探す') ?>:
+			<span><?php echo Mage::helper('job')->getTransName(Mage::getModel('job/category')->load($this->getCategory())) ?></span>
+		</div>
+		<?php endif; ?>
+		
+		<?php if($this->hasLocation()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('国から探す') ?>:
+			<?php $location = Mage::getModel('job/country')->load($this->getLocation());
+			?>
+			<span><?php echo Mage::helper('job')->getTransName($location) ?></span>
+		</div>
+		<?php endif; ?>
+		<?php if($this->hasMultiLocation()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('国から探す') ?>:
+			<?php 
+			$multiloc = array();
+			foreach($this->getMultiLocation() as $locId){
+				$multiloc[] = Mage::helper('job')->getTransName(Mage::getModel('job/country')->load($locId));
+			}
+			?>
+			<span><?php echo implode('、', $multiloc) ?></span>
+		</div>
+		<?php endif; ?>
+		
+		<?php if($this->hasLanguage()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('言語から探す') ?>:
+			<span><?php echo Mage::helper('job')->getTransName(Mage::getModel('job/language')->load($this->getLanguage())) ?></span>
+		</div>
+		<?php endif; ?>
+		<?php if($this->hasMultiLanguage()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('言語から探す') ?>:
+			<?php 
+			$multilang = array();
+			foreach($this->getMultiLanguage() as $langId){
+				$multilang[] = Mage::helper('job')->getTransName(Mage::getModel('job/language')->load($langId));
+			}
+			?>
+			<span><?php echo implode('、', $multilang) ?></span>
+		</div>
+		<?php endif; ?>
+		
+		<?php if($this->hasJobLevel()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('Đối tượng') ?>:
+			<span><?php echo Mage::getModel('job/level')->load($this->getJobLevel())->getName() ?></span>
+		</div>
+		<?php endif; ?>		
+		
+		<?php if($this->hasIndustry()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('業種') ?>:
+			<span><?php echo Mage::getModel('job/parentcategory')->load($this->getIndustry())->getName() ?></span>
+		</div>
+		<?php endif; ?>
+		<?php if($this->hasMultiCategory()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('業種') ?>:
+			<?php 
+			$multilang = array();
+			foreach($this->getMultiCategory() as $langId){
+				$multilang[] = Mage::helper('job')->getTransName(Mage::getModel('job/parentcategory')->load($langId));
+			}
+			?>
+			<span><?php echo implode('、', $multilang) ?></span>
+		</div>
+		<?php endif; ?>
+		
+		<?php if($this->hasFunction()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('職種から探す') ?>:
+			<span><?php echo Mage::getModel('job/parentcategory')->load($this->getFunction())->getName() ?></span>
+		</div>
+		<?php endif; ?>
+		<?php if($this->hasMultiFunction()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('職種から探す') ?>:
+			<?php 
+			$multilang = array();
+			foreach($this->getMultiFunction() as $langId){
+				$multilang[] = Mage::helper('job')->getTransName(Mage::getModel('job/parentcategory')->load($langId));
+			}
+			?>
+			<span><?php echo implode('、', $multilang) ?></span>
+		</div>
+		<?php endif; ?>
+		
+		<?php if($this->hasFunctionCategory()): ?>
+		<div class="info inline-b">
+			<?php echo $this->__('職種から探す') ?>:
+			<span><?php echo Mage::getModel('job/category')->load($this->getFunctionCategory())->getName() ?></span>
+		</div>
+		<?php endif; ?>
+		<p>
+		</p>
+	</div>
+	<div class="results">
+		<?php if($this->getResults()->count() > 0): ?>
+			<script>
+				jQuery(document).ready(function(){
+					jQuery('.info-search > p').html(jQuery('.pager .amount'));
+				});
+			</script>
+			<div class="content">
+				<?php $col = $this->getResults()->setPageSize(12)->load(); ?>
+			<?php foreach($col as $job): ?>
+				<?php echo Mage::helper('job')->renderJob($job) ?>
+			<?php endforeach; ?>
+			</div>
+			<?php
+				echo $this->getPagerHtml();
+			?>
+		<?php else: ?>
+			<div class="no-results clearfix">
+				<img class="fll" src="<?php echo $this->getSkinUrl('images/no-results.png') ?>" alt="" />
+				<span class="fll text"><?php echo $this->__('該当する条件の求人情報が見つかりませんでした。・検索条件を変えて再度求人検索してください。') ?></span>
+			</div>
+		<?php endif; ?>
+	</div>
+</div>
+	<?php //if($this->hasFilters()): ?>
+		<?php //foreach($this->getFilters() as $filter): ?>
+			<?php //echo $filter->toHtml(); ?>
+		<?php //endforeach; ?>
+	<?php //endif; ?>
+	
+<?php
+// Unset keyword search string in session
+Mage::getSingleton('core/session')->unsKeywordSearch();
+?>

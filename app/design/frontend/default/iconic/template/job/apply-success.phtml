@@ -1,0 +1,61 @@
+<?php $job = $this->getItem() ?>
+<?php $jobs = $this->getJobsInCategory() ?>
+<div class
+<div id="page-title">
+	<h2 class="blue-tit text-blue">
+		<?php echo $this->__('応募完了') ?>
+	</h2>
+</div>
+<div class="greetings">
+	<h3 class="iconic-id">
+		<?php echo $this->__('<b>No. %s</b>   |   登録日: %s', $job->getIconicId(), Mage::helper('job')->formatDate($job->getCreatedTime())) ?>
+	</h3>
+	<h1>
+		<?php echo $job->getTitle() ?>
+	</h1>
+	<div class="apply-success-message clearfix">
+		<div class="message">
+			<p class="success text-orange"><?php echo $this->__('ご応募が完了しました！') ?></p>
+			<p><?php echo $this->__('ご応募、有難うございました。応募状況の進捗があり次第、弊社コンサルタントより連絡を入れさせて頂きます。ご質問等ございましたら、御気軽に<a href="/%s">こちら</a>からお問い合わせください。', Mage::helper('job')->getContactUrl()) ?></p>
+		</div>
+	</div>
+</div>
+
+<!-- Jobs Same Category -->
+<?php if(count($jobs) > 0): ?>
+<div id="job-same-category">
+	<fieldset>
+		<legend class="text-blue">
+			<?php echo $this->__('同じカテゴリーのお仕事をチェックする！') ?>
+		</legend>
+		<ul class="jobs-list">
+		
+			<?php foreach($jobs as $jb): ?>
+				<li>
+					<?php echo Mage::helper('job')->renderJob($jb) ?>
+				</li>
+			<?php endforeach; ?>
+		</ul>
+		<a class="text-blue view-more-category" href="<?php echo Mage::helper('job')->getCategoryUrl($job->getCategoryId()); ?>">>> <?php echo $this->__('もっと見る') ?></a>
+	</fieldset>
+</div>
+<?php endif; ?>
+<!-- Google Code for Sign-up Conversion Page --> 
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 964610057;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "J2StCJfosgkQiZD7ywM"; var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript"  
+src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt=""  
+src="//www.googleadservices.com/pagead/conversion/964610057/?label=J2StCJfosgkQiZD7ywM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>

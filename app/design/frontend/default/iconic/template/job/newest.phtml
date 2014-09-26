@@ -1,0 +1,241 @@
+<div id="newest-jobs">
+	<h2 class="blue-tit">
+		<?php echo $this->__('最新求人情報') ?>
+	</h2>
+	
+	<div class="jobs-carousel">
+		<ul>
+			<?php foreach($this->getJobCollection() as $job): ?>
+			<?php $countryId = explode(',', $job->getLocationId()); ?>
+			<?php $country = Mage::getModel('job/country')->load((int)$countryId[1]) ?>
+			<li>
+				<div class="top clearfix">
+					<img class="fll" src="<?php echo $this->getSkinUrl('images/country/'.$country->getUrlKey().'.png') ?>" alt="" />
+					<span class="fll location-name"><?php echo Mage::helper('job')->getTransName($country) ?></span>
+					<div class="date flr">
+						<?php echo Mage::helper('job')->formatDate($job->getCreatedTime()) ?>
+					</div>
+				</div>
+				<div class="bottom">
+					<h3 class="tit"><?php echo $job->getTitle() ?></h3>
+					<p>
+						<?php echo $this->__('勤務地: %s | 給与: %s', $job->getLocationText(), $job->getFullSalary()) ?>
+					</p>
+				</div>
+				<a class="view" href="<?php echo $job->getUrl() ?>" title="<?php echo $this->__('詳細') ?>">
+					>>  <?php echo $this->__('詳細') ?>
+				</a>
+			</li>
+			<?php endforeach; ?>
+		</ul>
+	</div>
+</div>
+
+<div id="newest-block">
+	<!-- Tab Control -->
+	<div id="tab-control" class="clearfix">
+		<div data-tab="map" class="tab fll first map active">
+			<span><?php echo $this->__('国から探す') ?></span>
+		</div>
+		<div data-tab="category" class="tab fll mid catgory">
+			<span><?php echo $this->__('業界から探す') ?></span>
+		</div>
+		<div data-tab="function" class="tab fll mid function">
+			<span><?php echo $this->__('職種から探す') ?></span>
+		</div>
+		<div data-tab="language" class="tab fll last language">
+			<span><?php echo $this->__('母国語から探す') ?></span>
+		</div>
+	</div>
+	
+	<!-- Tab Content -->
+	<div id="tab-content">
+		<!-- Content for newest-jobs -->
+		<div id="tab-content-location" class="tab-content map">
+			<img id="world-map" src="<?php echo $this->getSkinUrl('images/map2.png') ?>" border="0" width="763" height="588" orgWidth="763" orgHeight="588" usemap="#image-map" alt="" />
+			<map name="image-map" id="world-map">
+			    <area id="map" shape="rect" coords="761,586,763,588" alt="Image Map" style="outline:none;" title="World Map" href="" />
+			    <area data-search="japan" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/japan" shape="poly" coords="536,183,554,172,567,162,586,161,595,154,600,146,617,145,624,125,624,102,636,88,640,73,655,77,677,87,682,100,655,114,648,117,650,133,639,143,641,157,617,174,581,185,561,189,552,206,540,196,544,190" style="outline:none;" target="_self"     />
+			    <area data-search="taiwan" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/taiwan" shape="poly" coords="459,282,453,273,461,259,467,251,477,254,471,269,464,283" style="outline:none;" target="_self"     />
+			    <area data-search="hong-kong" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/hong-kong" shape="poly" coords="403,287,402,282,406,280,421,284,410,299" style="outline:none;" target="_self"     />
+			    <area data-search="korea" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/korea" shape="poly" coords="501,170,510,189,532,177,550,158,535,135,527,132,525,130,520,119,498,129,508,152,512,163" style="outline:none;" target="_self"     />
+			    <area data-search="china" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/china" shape="poly" coords="349,275,379,279,405,272,432,264,444,247,455,232,464,215,460,199,451,174,453,157,448,139,435,136,452,124,481,117,502,116,512,111,529,106,541,97,549,93,550,82,558,74,569,74,577,57,551,62,538,57,481,11,492,14,423,50,437,62,450,64,399,86,380,85,382,96,332,113,256,102,210,84,199,60,162,52,128,72,56,125,85,164,111,194,132,212,179,225,206,226,224,226,242,219,249,215,268,222,279,241,272,256,290,269,289,282,309,271,327,268,344,269" style="outline:none;" target="_self"     />
+			    <area data-search="philippines" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/philippines" shape="poly" coords="477,422,491,416,507,428,519,417,513,395,509,360,478,350,483,333,478,311,456,313,449,338,464,360" style="outline:none;" target="_self"     />
+			    <area data-search="indonesia" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/indonesia" shape="poly" coords="239,431,263,436,284,453,301,467,326,487,355,486,364,477,363,465,376,464,404,444,439,443,448,461,485,470,523,463,574,470,637,493,644,558,504,573,445,571,332,547,290,508,256,462,248,447" style="outline:none;" target="_self"     />
+			    <area data-search="india" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/india" shape="poly" coords="184,280,177,257,169,246,120,235,112,222,110,211,92,197,94,180,87,172,62,177,68,195,44,234,24,238,36,258,20,267,26,281,33,295,50,313,85,402,94,402,117,356,111,340" style="outline:none;" target="_self"     />
+			    <area data-search="bangladesh" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/bangladesh" shape="poly" coords="181,245,184,256,191,284,204,272,215,259,212,257,196,253" style="outline:none;" target="_self"     />
+			    <area data-search="myanmar" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/myanmar" shape="poly" coords="216,291,230,263,249,239,264,228,269,250,261,263,274,270,283,285,283,293,269,304,261,319,271,333,266,342,256,335,238,336,233,336,232,309" style="outline:none;" target="_self"     />
+			    <area data-search="singapore" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/singapore" shape="poly" coords="325,475,322,462,317,453,306,461" style="outline:none;" target="_self"     />
+			    <area data-search="malaysia" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/malaysia" shape="poly" coords="276,406,307,421,313,440,314,451,298,458" style="outline:none;" target="_self"     />
+			    <area data-search="vietnam" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/vietnam" shape="poly" coords="324,391,326,386,332,380,339,372,348,370,349,351,349,341,319,307,325,301,316,292,310,289,307,286,303,276,326,272,335,270,344,275,348,287,339,302,342,316,355,330,367,353,370,372,360,391,343,392,334,403,325,406" style="outline:none;" target="_self"     />
+			    <area data-search="cambodia" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/cambodia" shape="poly" coords="312,379,306,364,309,355,325,354,336,354,348,355,347,369,334,382,323,390,314,398" style="outline:none;" target="_self"     />
+			    <area data-search="laos" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/laos" shape="poly" coords="298,289,289,291,287,301,297,308,295,321,310,318,321,319,332,340,333,350,344,349,342,340,335,327,325,318,314,308,317,304,323,300,315,297,304,289,303,284,300,284" style="outline:none;" target="_self"     />
+			    <area data-search="thailand" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/thailand" shape="poly" coords="270,346,280,369,293,367,302,369,305,356,316,351,329,352,327,342,323,333,322,322,312,319,293,327,291,318,293,310,282,300,267,305,264,319" style="outline:none;" target="_self"     />
+			</map>
+			<?php 
+			$countries = Mage::getModel('job/country')->getCollection();
+			foreach($countries as $country): ?>
+			<img alt="" data-search="<?php echo $country->getUrlKey() ?>" class="<?php echo $country->getUrlKey() ?> country" src="<?php echo $this->getSkinUrl('images/map/'.$country->getUrlKey().'.png') ?>" />
+			<p data-search="<?php echo $country->getUrlKey() ?>" class="<?php echo $country->getUrlKey() ?>"><?php echo Mage::helper('job')->getTransName($country) ?></p>
+			<?php endforeach; ?>
+			
+			<div class="location">
+				<?php foreach($this->getCountryCollection() as $country): ?>
+				<div class="country <?php echo str_replace(' ', '', strtolower($country->getNameEn())) ?>">
+					<h3 class="clearfix">
+						<img alt="" class="fll" src="<?php echo $this->getSkinUrl('images/country/'.$country->getUrlKey().'.png') ?>" />
+						<a class="fll" href="<?php echo $country->getUrl() ?>"><?php echo Mage::helper('job')->getTransName($country) ?> <span>(<?php echo $country->getCount() ?>)</span></a>
+					</h3>
+				</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+		
+			<!-- Content for category -->
+			<div style="display: none;" id="tab-content-category" class="tab-content category category-function">
+				<!-- Industry Category -->
+				<div class="group-category clearfix industry">
+					<h5><?php echo $this->__('業界から探す') ?></h5>
+					<div class="list-category">
+						<table>
+							<tr>
+							<?php $j=1;foreach($this->getIndustryCollection() as $parent): ?>
+								<td>
+									<div class="parent">
+										<a class="parent" href="<?php echo $parent->getUrl() ?>" title="<?php echo Mage::helper('job')->getTransName($parent) ?> <span><?php  echo '('.$parent->getCount().')' ?></span>">
+											<?php echo Mage::helper('job')->getTransName($parent) ?> <span><?php  echo '('.$parent->getCount().')' ?></span>
+										</a>
+									</div>
+								</td>
+								<?php if($j%3==0 && $i != $this->getIndustryCollection()->count()): ?>
+								</tr><tr>
+								<?php elseif($i == $this->getIndustryCollection()->count()): ?>
+								</tr>
+								<?php endif; ?>
+							<?php $j++;endforeach; ?>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Content for Function Tab -->
+			<div style="display: none;" id="tab-content-function" class="tab-content function category-function">
+				<!-- Function Category -->
+				<div class="group-category clearfix function">
+					<h5><?php echo $this->__('職種から探す') ?></h5>
+					<div class="list-category">
+						<table>
+							<tr>
+							<?php $i=1;foreach($this->getFunctionCollection() as $parent): ?>
+								<td>
+									<div class="parent">
+										<a class="parent" href="<?php echo $parent->getUrl() ?>" title="<?php echo Mage::helper('job')->getTransName($parent) ?> <span><?php  echo '('.$parent->getCount().')' ?></span>">
+											<?php echo Mage::helper('job')->getTransName($parent) ?> <span><?php  echo '('.$parent->getCount().')' ?></span>
+										</a>
+									</div>
+								</td>
+								<?php if($i%3==0 && $i != $this->getFunctionCollection()->count()): ?>
+								</tr><tr>
+								<?php elseif($i == $this->getFunctionCollection()->count()): ?>
+								</tr>
+								<?php endif; ?>
+							<?php $i++;endforeach; ?>
+						</table>
+						<!-- old function style
+						<?php $functionsCat = clone $this->getFunctionCollection(); ?>
+						<?php $leftFunction = $functionsCat->clear()->setPageSize(3)->setCurPage(1)->load(); ?>
+						<div class="left fll">
+							<?php foreach($leftFunction as $parent): ?>
+								<div class="parent">
+									<a class="parent" href="<?php echo $parent->getUrl() ?>" title="<?php echo Mage::helper('job')->getTransName($parent) ?> <span><?php  echo '('.$parent->getCount().')' ?></span>">
+										<?php echo Mage::helper('job')->getTransName($parent) ?> <span><?php  echo '('.$parent->getCount().')' ?></span>
+									</a>
+								</div>
+							<?php endforeach; ?>
+						</div>
+						
+						<?php $midFunction = $functionsCat->clear()->setPageSize(3)->setCurPage(2)->load(); ?>
+						<div class="mid fll">
+							<?php foreach($midFunction as $parent): ?>
+								<div class="parent">
+									<a class="parent" href="<?php echo $parent->getUrl() ?>" title="<?php echo Mage::helper('job')->getTransName($parent) ?> <span><?php  echo '('.$parent->getCount().')' ?></span>">
+										<?php echo Mage::helper('job')->getTransName($parent) ?> <span><?php  echo '('.$parent->getCount().')' ?></span>
+									</a>
+								</div>
+							<?php endforeach; ?>
+						</div>
+						
+						<?php $rightFunction = $functionsCat->clear()->setPageSize(3)->setCurPage(3)->load(); ?>
+						<div class="right flr">
+							<?php foreach($rightFunction as $parent): ?>
+								<div class="parent">
+									<a class="parent" href="<?php echo $parent->getUrl() ?>" title="<?php echo Mage::helper('job')->getTransName($parent) ?> <span><?php  echo '('.$parent->getCount().')' ?></span>">
+										<?php echo Mage::helper('job')->getTransName($parent) ?> <span><?php  echo '('.$parent->getCount().')' ?></span>
+									</a>
+								</div>
+							<?php endforeach; ?>
+						</div>-->
+					</div>
+				</div>
+			</div>
+			
+			<!-- Content for Language Tab -->
+			<div style="display: none" id="tab-content-language" class="tab-content language">
+				<?php $languages = $this->getLanguageCollection(); ?>
+				<ul>
+				<?php foreach($languages as $lang): ?>
+					<li class="<?php echo strtolower($lang->getNameEn()) ?>">
+						<a href="<?php echo $lang->getUrl() ?>" title="<?php echo Mage::helper('job')->getTransName($lang) ?>">
+							<?php echo Mage::helper('job')->getTransName($lang) ?>
+							<span>(<?php echo $lang->getCount() ?>)</span>
+						</a>
+					</li>
+				<?php endforeach; ?>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+(function($){
+	$(document).ready(function(){
+		$('#tab-control .tab').click(function(e){
+			e.preventDefault();
+			$('.tab').removeClass('active');
+			$(this).addClass('active');
+			$('.tab-content').fadeOut(200);
+			$('.tab-content.'+$(this).data('tab')).fadeIn(200);
+		});
+		
+		
+		//job carousel
+		$('.jobs-carousel').jCarouselLite({
+			auto: 5000,
+			speed: 1000
+		});
+		
+		//search by country map area
+		$('map area, #tab-content-location p').not('#map').hover(function(){
+				$('img.'+$(this).data('search')).show();
+				$('p.'+$(this).data('search')).addClass('active');
+			},
+			function(){
+				$('img.'+$(this).data('search')).hide();
+				$('p.'+$(this).data('search')).removeClass('active');
+			}
+		);
+		$('#tab-content-location img.country').hover(function(){
+				$(this).show();
+				$(this).next().addClass('active');
+			},
+			function(){
+				$(this).hide();
+				$(this).next().removeClass('active');
+		});
+		$('#tab-content-location img.country, #tab-content-location p').click(function(e){
+			e.preventDefault();
+			window.location = "<?php echo Mage::helper('job')->getBaseUrl().Mage::helper('job')->getSearchUrl() ?>/"+$(this).data('search');
+		});
+	});
+})(jQuery)
+</script>

@@ -1,0 +1,94 @@
+<?php $job = $this->getItem() ?>
+<?php $user = $this->getUser() ?>
+<div id="page-title">
+	<h2 class="blue-tit text-blue">
+		<?php echo $this->__('応募する') ?>
+	</h2>
+</div>
+<h3 class="iconic-id">
+	<?php echo $this->__('<b>No. %s</b>   |   登録日: %s', $job->getIconicId(), Mage::helper('job')->formatDate($job->getCreatedTime())) ?>
+</h3>
+<h1>
+	<?php echo $job->getTitle() ?>
+</h1>
+<div class="form-apply width-70">
+	<form id="form-apply" action="<?php echo Mage::getBaseUrl() ?>job/apply/send" method="POST" >
+		<input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+		<input type="hidden" name="id" value="<?php echo $job->getId() ?>" />
+		<div class="row align-center clearfix">
+			<input class="fll width-30" name="name" type="text" value="<?php echo $user->getName() ?>" readonly="readonly"  />
+			<input class="width-30" name="email" type="text" value="<?php echo $user->getEmail() ?>" readonly="readonly"  />
+			<input class="flr width-30" placeholder="<?php echo $this->__('電話番号') ?>" name="phone" type="text" value="<?php echo $user->getPhone() ?>"  />
+		</div>
+		<div class="row">
+			<textarea name="message" placeholder="<?php echo $this->__('メッセージ') ?>"></textarea>
+		</div>
+		<div class="row">
+			<input id="fileupload" type="file" name="files[]" data-url="<?php echo Mage::getBaseUrl() ?>job/apply/upload" multiple>
+			<div id="progress">
+			    <div class="bar" style="width: 0%;"></div>
+			</div>
+			<div class="files">
+				
+			</div>
+		</div>
+		<div class="row">
+			<p>
+    			<?php echo $this->__('Word, Excel, PowerPoint, PDF,Html,Textファイルがアップロード可能です。') ?>
+    		</p>
+    		<p>
+    			<?php echo $this->__('1ファイルの容量は最大2MBまでとなっております') ?>。
+    		</p>
+		</div>
+		<div class="row clearfix">
+			<button type="submit" name="submit" class="button-blue btn">
+				<?php echo $this->__('応募する') ?>
+			</button>
+			<a class="btn button-grey back-button" href="<?php echo Mage::helper('job')->getJobLink($job) ?>">
+				<?php echo $this->__('戻る') ?>
+			</a>
+		</div>
+	</form>
+</div>
+
+
+<script src="<?php echo Mage::helper('job')->getUrl() ?>js/fileupload/vendor/jquery.ui.widget.js"></script>
+<script src="<?php echo Mage::helper('job')->getUrl() ?>js/fileupload/jquery.iframe-transport.js"></script>
+<script src="<?php echo Mage::helper('job')->getUrl() ?>js/fileupload/jquery.fileupload.js"></script>
+<script>
+(function($){
+	$(function () {
+	    $('#fileupload').fileupload({
+	        dataType: 'json',
+	        progressall: function (e, data) {
+		        var progress = parseInt(data.loaded / data.total * 100, 10);
+		        $('#progress').show();
+		        $('#progress .bar').text(progress + '%');
+		        $('#progress .bar').css(
+		            'width',
+		            progress + '%'
+		        );
+		    },
+	        done: function (e, data) {
+	        	$('#progress').hide();
+	            $.each(data.result.files, function (index, file) {
+	            	if(!file.error){
+	            		var btnText = '<?php echo $this->__('DELETE') ?>';
+	            		var element = '<div class="file-uploaded clearfix"><a title="'+file.name+'" target="_blank" href="'+file.url+'" class="file-name fll">'+file.name+'</a><a href="#" class="flr delete">'+btnText+'</a>';
+		            	element += '<input type="hidden" name="filenames[]" value="'+file.name+'" /></div>';
+		            	$('.row .files').append(element);            	
+		            	
+					    $('a.delete').click(function(e){
+					    	e.preventDefault();
+					    	$(this).parent().fadeOut().remove();
+					    });
+	                }else{
+	                	alert(file.error);
+	                }
+	            });
+	        }
+	    });
+	    
+	});
+})(jQuery);
+</script>

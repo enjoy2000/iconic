@@ -1,0 +1,145 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<title><?php echo $this->getTitle() ?></title>
+<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
+    var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
+//]]>
+</script>
+<![endif]-->
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml() ?>
+<?php echo $this->getIncludes() ?>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-33255746-1', 'iconic-jp.com');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 964610057;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<style>
+	iframe[name="google_conversion_frame"] {
+		display: none;
+		opacity: 0;
+	}
+</style>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/964610057/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+<?php $bodyclass= $this->getLayout()->getBlock('root')->getBodyClass() ?>
+<?php if(strpos($bodyclass, 'cms-index-index')): ?>
+<style>
+	#main .main{
+		background-color: transparent!important;
+		padding: 0!important;
+	}
+</style>
+<?php endif; ?>
+
+<?php if((!$this->helper('customer')->isLoggedIn()) && (Mage::getSingleton('customer/session')->getShowLogin() === 1)): ?>
+	<?php 
+	Mage::getSingleton('customer/session')->unsShowLogin(); 
+	?>
+<script>
+jQuery(document).ready(function(){
+	jQuery('#login-button').click();
+});
+</script>
+<?php endif; ?>
+
+
+<?php if((!$this->helper('customer')->isLoggedIn()) && (Mage::getSingleton('customer/session')->getShowForgotPassword() == 1)): ?>
+	<?php Mage::getSingleton('customer/session')->unsShowForgotPassword();  ?>
+<script>
+jQuery(document).ready(function(){
+	showForgotPage();
+});
+</script>
+<?php endif; ?>
+<?php if(strpos($bodyclass, 'blog-detail-index')): ?>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript">stLight.options({publisher: "7712df75-e749-40b3-b8c3-c356493d7ae9", doNotHash: true, doNotCopy: false, hashAddressBar: false});</script>
+<?php endif; ?>
+<?php if(Mage::getSingleton('cms/page')->getIdentifier() == 'home'): ?>
+<meta property="og:image" content="<?php echo $this->getSkinUrl('images/logo-big.png') ?>" />
+<link rel="image_src" href="<?php echo $this->getSkinUrl('images/logo-big.png') ?>" />
+<!-- Slider by google swiffy -->
+<script src="/js/iconic/runtime.js"></script>
+<script src="/js/iconic/slider.js"></script>
+<script>
+  jQuery(document).ready(function(){
+      var stage = new swiffy.Stage(document.getElementById('swiffycontainer'),
+                                   swiffyobject);
+      
+      stage.start();
+  });
+</script>
+<?php endif; ?>
+<?php if(strpos($bodyclass, 'blog-index-index')): ?>
+<meta property="og:image" content="<?php echo $this->getSkinUrl('images/blog.png') ?>" />
+<link rel="image_src" href="<?php echo $this->getSkinUrl('images/blog.png') ?>" />
+<?php endif; ?>
+
+<!-- Remarketing Facebook -->
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+  _fbq.push(['addPixelId', '292992534223616']);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(['track', 'PixelInitialized', {}]);
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=292992534223616&amp;ev=PixelInitialized" /></noscript>

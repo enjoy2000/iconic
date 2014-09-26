@@ -1,0 +1,308 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=516325528419845&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<header id="header">
+	<div id="fixed-menu">
+		<!-- Header Logo -->
+		<div id="header-logo">
+			<div class="wrapper clearfix">
+				<!-- Logo -->
+				<div id="logo" class="fll">
+					<a class="candidate<?php echo Mage::helper('client')->isEmployerSite() ? '' : ' active' ?>" href="/">
+						<?php echo $this->__('求職者の皆様はこちら') ?>
+					</a>
+					<a class="employer<?php echo Mage::helper('client')->isEmployerSite() ? ' active' : '' ?>" href="/company/">
+						<?php echo $this->__('企業向けサイト') ?>
+					</a>
+				</div><!-- End Logo -->
+				
+				<!-- Switch languages -->
+				<div id="switch-languages">
+					<a class="switch-lang jp<?php echo (Mage::app()->getStore()->getCode() == 'jp') ? ' active' : '' ?>" href="<?php echo Mage::helper('job')->getUrl().substr($_SERVER['REQUEST_URI'],1) ?>" title="<?php echo $this->__('日本語') ?>">
+						<?php echo $this->__('日本語') ?>
+					</a>
+					<a class="switch-lang en<?php echo (Mage::app()->getStore()->getCode() == 'en') ? ' active' : '' ?>" href="<?php echo Mage::helper('job')->getUrl().'en/'.substr($_SERVER['REQUEST_URI'],1) ?>" title="<?php echo $this->__('English') ?>">
+						<?php echo $this->__('English') ?>
+					</a>
+				</div><!-- End Switch Languages -->
+				
+				<!-- Menu -->
+				<div id="menu" class="flr">
+					<?php //Mage::getSingleton('customer/session')->getCustomer()->setCreatecv(0)->save() ?>
+					<?php $bodyclass= $this->getLayout()->getBlock('root')->getBodyClass() ?>
+					<ul>
+						<li class="border">
+							<a href="<?php echo Mage::helper('job')->getBaseUrl().Mage::helper('job')->getContactUrl() ?>"><?php echo $this->__('お問い合わせ') ?></a>
+						</li>
+						<?php if(Mage::getSingleton('customer/session')->getCustomer()->getCreatecv() != 1):  ?>
+						<li class="border">
+							<a href="<?php echo Mage::helper('job')->getBaseUrl().Mage::helper('job')->getCreateCVUrl() ?>"><?php echo $this->__('転職支援サービスに申し込む') ?></a>
+						</li>
+						<?php endif; ?>
+					</ul>
+				</div><!-- End Menu -->
+			</div>
+		</div><!-- End Header Logo -->
+	</div>
+		<?php if(strpos($bodyclass, 'cms-index-index')): ?>
+		<div id="slider">
+			<div class="bg">&nbsp;</div>
+			<div class="top-socials">
+				<div class="wrapper clearfix">
+					<div class="tw">
+						<a href="https://twitter.com/iconicvn" class="twitter-follow-button" data-show-count="false" data-lang="jp">@iconicvn</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</div>
+					<div class="fb">
+						<div class="fb-like" data-href="https://www.facebook.com/iconic.jp" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+					</div>
+				</div>
+			</div>
+			<!-- Header Menu -->
+			<div id="header-menu">
+				<div class="wrapper">
+					<ul>
+						<li class="home">
+							<a title="Iconic" href="<?php echo Mage::getBaseUrl() ?>">
+								<img width="131" height="31" src="<?php echo $this->getSkinUrl('images/logo-white.png') ?>" alt="Iconic's Logo"  />
+							</a>
+						</li>
+						<li class="<?php echo strpos($bodyclass, 'cms-about-iconic') ? 'current-menu-item' : ''  ?>">
+							<a href="<?php echo Mage::helper('job')->getBaseUrl() ?>about-iconic"><?php echo $this->__('アイコニックとは') ?></a>
+						</li>
+						<li class="<?php echo strpos($bodyclass, 'cms-for-candidate-in-japan') ? 'current-menu-item' : ''  ?>">
+							<a href="<?php echo Mage::helper('job')->getBaseUrl() ?>for-candidate-in-japan"><?php echo $this->__('求職者の皆様') ?></a>
+						</li>
+						<li class="<?php echo strpos($bodyclass, 'cms-for-company-in-japan') ? 'current-menu-item' : ''  ?>">
+							<a href="<?php echo Mage::helper('job')->getBaseUrl() ?>for-company-in-japan"><?php echo $this->__('企業の皆様向け') ?></a>
+						</li> 
+						<li class="<?php echo strpos($bodyclass, 'cms-faq') ? 'current-menu-item' : ''  ?>">
+							<a href="<?php echo Mage::helper('job')->getBaseUrl() ?>faq"><?php echo $this->__('よくある質問と答え') ?></a>
+						</li>
+						<li class="<?php echo strpos($bodyclass, 'cms-company-profile') ? 'current-menu-item' : ''  ?>">
+							<a href="<?php echo Mage::helper('job')->getBaseUrl() ?>company-profile"><?php echo $this->__('会社概要') ?></a>
+						</li>
+						<li class="border <?php echo strpos($bodyclass, 'cms-gioi-thieu-cong-ty') ? 'current-menu-item' : ''  ?>">
+							<?php if(!$this->helper('customer')->isLoggedIn()): ?>
+								<a id="login-button" href="#"><?php echo $this->__('ログイン') ?></a>
+							<?php else: ?>
+								<a id="logout-button" href="<?php echo $this->helper('customer')->getLogoutUrl() ?>"><?php echo $this->__('ログアウト') ?></a>
+							<?php endif; ?>
+						</li>
+					</ul>
+				</div>
+			</div><!-- End Header Menu -->
+			<div id="ajax-load">
+				<div class="wrapper">
+					<a title="<?php echo $this->__('CLOSE') ?>" id="close-button" href="#" class="close-button">X</a>
+					<div class="content">
+						
+					</div>
+				</div>
+				
+			</div>
+			<!-- create-->
+			<div id="home-message">
+				<div class="wrapper">
+				<div class="create-cv centerwide">
+					<p class="slogan">
+						<?php echo $this->__('アジアで働くならICONIC') ?>
+					</p>
+					<p>
+						<?php echo $this->__('ICONIC（アイコニック）はアジアを舞台に国境を超<br />えて働きたい方々に特化した転職エージェントです。') ?>
+					</p>
+					<div class="buttons clearfix <?php if($this->helper('customer')->isLoggedIn() && (Mage::getSingleton('customer/session')->getCustomer()->getCreatecv() != 1)){echo 'not-create';}elseif(Mage::getSingleton('customer/session')->getCustomer()->getCreatecv() == 1){echo 'logged';}else{echo 'not-login';} ?>">
+						<?php if(!$this->helper('customer')->isLoggedIn()): ?>
+						<div class="fll width-40">
+							<p><?php echo $this->__('新規登録はこちら') ?></p>
+							<span><?php echo $this->__('登録は30秒で終わります！') ?></span>
+							<a href="<?php echo Mage::helper('job')->getBaseUrl().Mage::helper('job')->getRegisterUrl(); ?>">
+								<?php echo $this->__('今すぐ、会員登録（<strong>無料</strong>）') ?>
+							</a>
+						</div>
+						<div class="flr width-40">
+							<p><?php echo $this->__('転職支援サービスに<br />申し込む') ?></p>
+							<a href="<?php echo Mage::helper('job')->getBaseUrl().Mage::helper('job')->getCreateCVUrl(); ?>">
+								<?php echo $this->__('求職登録（<strong>無料</strong>）') ?>
+							</a>
+						</div>
+						<?php else: ?>
+							<?php if(Mage::getSingleton('customer/session')->getCustomer()->getCreatecv() != 1): ?>
+							<div class="fll not-createcv">
+								<p><?php echo $this->__('こんにちは、 %s さん！', Mage::getSingleton('customer/session')->getCustomer()->getFirstname()) ?></p>
+								<p><small><?php echo $this->__('アジア転職事情に精通したキャリア') ?></small></p>
+								<p><small><?php echo $this->__('アドバイザーと直接お話ししませんか？') ?></small></p>
+							</div>
+							<div class="flr width-40">
+								<p><?php echo $this->__('転職支援サービスに<br />申し込む') ?></p>
+								<a href="<?php echo Mage::helper('job')->getBaseUrl().Mage::helper('job')->getCreateCVUrl(); ?>">
+									<?php echo $this->__('求職登録（<strong>無料</strong>）') ?>
+								</a>
+							</div>
+							<?php else: ?>
+							<div class="welcome">
+								<?php echo $this->__('こんにちは、 %s さん！', Mage::getSingleton('customer/session')->getCustomer()->getFirstname()) ?>
+							</div>
+							<?php endif; ?>
+						<?php endif; ?>
+					</div>
+				</div>
+				</div>
+			</div>
+			
+			<div id="swiffycontainer" style="width: 100%; height: 625px; position: relative;">
+		    </div>
+			
+			<!-- Search Block -->
+			<?php echo $this->getChildHtml('searchform') ?>
+			<!-- End Search Block -->
+		</div>
+		<?php else: ?>
+		<!-- Header Menu -->
+		<div id="header-menu">
+			<div class="wrapper">
+				<ul>
+					<li class="home">
+							<a title="Iconic" href="<?php echo Mage::getBaseUrl() ?>">
+								<img width="131" height="31" src="<?php echo $this->getSkinUrl('images/logo-white.png') ?>" alt="Iconic's Logo"  />
+							</a>
+						</li>
+					<li class="<?php echo strpos($bodyclass, 'cms-about-iconic') ? 'current-menu-item' : ''  ?>">
+						<a href="<?php echo Mage::helper('job')->getBaseUrl() ?>about-iconic"><?php echo $this->__('アイコニックとは') ?></a>
+					</li>
+					<li class="<?php echo strpos($bodyclass, 'cms-for-candidate-in-japan') ? 'current-menu-item' : ''  ?>">
+						<a href="<?php echo Mage::helper('job')->getBaseUrl() ?>for-candidate-in-japan"><?php echo $this->__('求職者の皆様') ?></a>
+					</li>
+					<li class="<?php echo strpos($bodyclass, 'cms-for-company-in-japan') ? 'current-menu-item' : ''  ?>">
+						<a href="<?php echo Mage::helper('job')->getBaseUrl() ?>for-company-in-japan"><?php echo $this->__('企業の皆様向け') ?></a>
+					</li> 
+					<li class="<?php echo strpos($bodyclass, 'cms-faq') ? 'current-menu-item' : ''  ?>">
+						<a href="<?php echo Mage::helper('job')->getBaseUrl() ?>faq"><?php echo $this->__('よくある質問と答え') ?></a>
+					</li>
+					<li class="<?php echo strpos($bodyclass, 'cms-company-profile') ? 'current-menu-item' : ''  ?>">
+						<a href="<?php echo Mage::helper('job')->getBaseUrl() ?>company-profile"><?php echo $this->__('会社概要') ?></a>
+					</li>
+					<li class="border <?php echo strpos($bodyclass, 'cms-gioi-thieu-cong-ty') ? 'current-menu-item' : ''  ?>">
+						<?php if(!$this->helper('customer')->isLoggedIn()): ?>
+							<a id="login-button" href="#"><?php echo $this->__('ログイン') ?></a>
+						<?php else: ?>
+							<a id="logout-button" href="<?php echo $this->helper('customer')->getLogoutUrl() ?>"><?php echo $this->__('ログアウト') ?></a>
+						<?php endif; ?>
+					</li>
+				</ul>
+			</div>
+		</div><!-- End Header Menu -->
+	</div>
+	<div id="ajax-load">
+		<div class="wrapper">
+			<a title="<?php echo $this->__('CLOSE') ?>" id="close-button" href="#" class="close-button">X</a>
+			<div class="content">
+				
+			</div>
+		</div>
+		
+	</div>
+	
+	<!-- Search Block -->
+	<?php echo $this->getChildHtml('searchform') ?>
+	<!-- End Search Block -->
+	<?php endif; ?>
+</header>
+<?php $featureCollection = Mage::getModel('job/feature')->getCollection() ?>
+<div id="feature-tags">
+	<div class="wrapper">
+		<div class="feature-tags clearfix">
+			<div class="fll">
+				<?php echo $this->__('人気のタグ') ?>
+			</div>
+			<div class="flr">
+				<?php foreach($featureCollection as $feature): ?>
+				<a href="<?php echo $feature->getUrl() ?>" title="<?php echo Mage::helper('job')->getTransName($feature) ?>">
+					<?php echo Mage::helper('job')->getTransName($feature) ?>
+				</a>
+					<?php echo ($featureCollection->getLastItem()->getId() != $feature->getId()) ? ' | ' : '' ?>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+	<!-- Breadcrumb -->
+	<?php if($this->getChildHtml('breadcrumbs')): ?>
+	<div id="breadcrumbs">
+		<div class="wrapper">
+    		<?php echo $this->getChildHtml('breadcrumbs') ?>
+    	</div>
+	</div>
+	<?php endif; ?>
+	<!-- End Breadcrumb -->
+	
+	<!-- Download Sample Cv -->
+	<div id="download-cv" class="clearfix">
+		<div class="fll download-btn">
+			&nbsp;
+		</div>
+		<div class="flr">
+			<div class="top">
+				<p><?php echo $this->__('ご希望のフォーマットのボタンをクリックしてください。') ?></p>
+				<table>
+					<tbody>
+						<tr>
+							<td><?php echo $this->__('日本語版') ?>:</td>
+							<td>
+								<p><a href="/履歴書フォーマット（和文）.docx"><?php echo $this->__('履歴書フォーマット') ?></a></p>
+								<p><a href="/職務経歴書フォーマット（和文）.doc"><?php echo $this->__('職務経歴書フォーマット') ?></a></p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="bot">
+				<table>
+					<tbody>
+						<tr>
+							<td><?php echo $this->__('英語版') ?>:</td>
+							<td>
+								<a href="/英文レジュメフォーマット.doc"><?php echo $this->__('英文レジュメフォーマット') ?></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div><!-- End Download Sample Cv -->

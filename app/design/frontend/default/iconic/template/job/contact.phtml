@@ -1,0 +1,68 @@
+<div id="contact-page" class="clearfix">
+	<div class="fll">
+		<h1 class="blue-tit"><?php echo $this->__('問い合わせ') ?></h1>
+		<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+		<p><?php echo $this->__('アイコニックへのご質問は以下のフォームからお願いします。') ?></p>
+		<p><?php echo $this->__('弊社コンサルタントが速やかにお答えします。') ?></p>
+		<form action="" method="post" id="contact-form">
+			<input type="hidden" name="form_key" value="<?php echo Mage::getSingleton('core/session')->getFormKey() ?>" />
+			<div class="row">
+				<?php echo $this->__('＊＝必須') ?>
+			</div>
+			<div class="row clearfix">
+				<input class="fll" required name="name" type="text" placeholder="<?php echo $this->__('お名前') ?>*" />
+				<input class="flr" required name="email" type="email" placeholder="<?php echo $this->__('メールアドレス') ?>*" />
+			</div>
+			
+			<div class="row clearfix">
+				<input class="fll" name="companyname" type="text" placeholder="<?php echo $this->__('会社名') ?>" />
+				<input class="flr" name="phone" type="number" placeholder="<?php echo $this->__('電話番号') ?>" />
+			</div>
+			
+			<div class="row">
+				<textarea required name="message" placeholder="<?php echo $this->__('メッセージ') ?>*"></textarea>
+			</div>
+			
+			<div class="actions">
+				<button type="submit" class="button-blue btn"><?php echo $this->__('送信') ?></button>
+				<button class="button-grey btn btn-back"><?php echo $this->__('取消') ?></button>
+			</div>
+		</form>
+	</div>
+	
+	<div class="flr">
+		<div class="row">
+			<p class="tit"><?php echo $this->__('メールアドレス') ?>:</p>
+			<a href="mailto:info@iconic-jp.com">info@iconic-jp.com</a>
+		</div>
+		<div class="row">
+			<p><?php echo $this->__('ベトナム') ?></p>
+			<p><?php echo $this->__('ホーチミン本社') ?></p>
+			<p><span class="tit"><?php echo $this->__('電話') ?>:</span> (84) - 8 - 3821 - 5122</p>
+		</div>
+		<div class="row">
+			<p><?php echo $this->__('ハノイオフィス') ?></p>
+			<p><span class="tit"><?php echo $this->__('電話') ?>:</span> (84) - 4 - 3248 - 4446</p>
+		</div>
+		<div class="row">
+			<p><?php echo $this->__('日本') ?></p>
+			<p><?php echo $this->__('東京オフィス') ?></p>
+			<p><span class="tit"><?php echo $this->__('電話') ?>:</span> (81) - 3 - 6222 5520</p>
+		</div>
+		<div class="row">
+			<p><?php echo $this->__('インドネシア') ?></p>
+			<p><?php echo $this->__('ジャカルタオフィス') ?></p>
+			<p><span class="tit"><?php echo $this->__('電話') ?>:</span> (62) - 21 290 22273</p>
+		</div>
+	</div>
+</div>
+<script>
+(function($){
+	$(document).ready(function(){
+	    $('button.btn-back').click(function(e){
+	    	e.preventDefault();
+	        parent.history.back();
+	    });
+	});
+})(jQuery);
+</script>

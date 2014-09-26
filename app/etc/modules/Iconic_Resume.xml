@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Iconic_Resume>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Iconic_Resume>
+    </modules>
+</config> 

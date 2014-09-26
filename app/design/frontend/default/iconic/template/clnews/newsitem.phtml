@@ -1,0 +1,65 @@
+<div id="page-title">
+	<h2 class="blue-tit text-blue">
+		<?php echo $this->__('新着情報') ?>
+	</h2>
+</div>
+
+<div id="blog-content">
+	<?php $item = $this->getNewsitem(); ?>
+	<h1 class="text-black">
+		<?php echo $item->getTitle() ?>
+	</h1>
+	<?php if (Mage::helper('clnews')->showCategory()): ?>
+	    <?php if ($this->getCategoryByNews($item->getID())->getData('title') != ''): ?>
+	        <span class="date">&nbsp;|&nbsp; <?php echo $this->getCategoryByNews($item->getID())->getData('title'); ?></span>
+	    <?php endif; ?>
+	<?php endif; ?>
+	
+	<?php if ($item->getImageFullContent()): ?>
+	    <div class="news_image">
+	        <?php $imageSize = $this->getFullImageSize($item) ?>
+	        <img src="<?php echo Mage::helper('clnews')->resizeImage(str_replace('clnews/', '', $item->getImageFullContent()), $imageSize['width'], $imageSize['height'], 'clnews'); ?>" />
+	    </div>
+	<?php endif; ?>
+	
+	<div class="news">
+	    <?php echo $this->contentFilter($item->getFullContent()); ?>
+	    <?php if (Mage::helper('clnews')->showAuthor()): ?>
+	        <?php if ($item->getAuthor()): ?>
+	            <span><?php echo $this->__('Author: ').$item->getAuthor(); ?></span>
+	        <?php endif; ?>
+	    <?php endif; ?>
+	</div>
+	
+	<p>
+	<?php if (Mage::helper('clnews')->getTagsAccess()): ?>
+	    <?php if ($item->getTags()): ?>
+	    <?php $arr = preg_split('/,/', $item->getTags()); ?>
+	    <?php $tags = ''; ?>
+	    <?php $count = count($arr); ?>
+	    <?php $k = 1; ?>
+	    <?php foreach ($arr as $val): ?>
+	    <?php if ($k == $count): ?>
+	    <?php $tags .= '<a href="' . $this->getUrl(Mage::helper('clnews')->getRoute() . '/index/index/q/' . urlencode(trim($val)) . '/') . '" >' . trim($val) . '</a> '; ?>
+	    <?php else: ?>
+	    <?php $tags .= '<a href="' . $this->getUrl(Mage::helper('clnews')->getRoute() . '/index/index/q/' . urlencode(trim($val)) . '/') . '" >' . trim($val) . '</a>, '; ?>
+	    <?php endif; ?>
+	    <?php $k++; ?>
+	    <?php endforeach; ?>
+	    <img src="<?php echo $this->getSkinUrl('css/clnews/images/i-tags.gif')?>"/>&nbsp;<?php echo $tags; ?>
+	    <?php endif; ?>
+	<?php endif; ?>
+	</p>
+	
+	<?php echo $this->getMessagesBlock()->getGroupedHtml(); ?>
+</div>
+<div class="share-socials">
+	<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+		<a class="addthis_button_facebook"></a>
+		<a class="addthis_button_linkedin"></a>
+		<a class="addthis_button_google_plusone_share"></a>
+	</div>
+	<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-528575d340ba8794"></script>
+</div>
+<div class="fb-comments" data-width="820" data-numposts="5" data-colorscheme="light"></div>

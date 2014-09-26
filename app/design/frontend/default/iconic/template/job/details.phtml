@@ -1,0 +1,102 @@
+<?php 
+$item = $this->getItem(); 
+$items = $this->getJobsInCategory();
+?>
+
+<!-- Page Title -->
+<div id="page-title">
+	<h2 class="blue-tit">
+		<?php echo $this->__('応募する') ?>
+	</h2>
+</div>
+
+<div class="job-wrapper">
+	<?php if($item->getFeatureId()): ?>
+	<div class="feature-tags clearfix">
+		<img class="fll" alt="" src="<?php echo Mage::getBaseUrl() ?>skin/frontend/default/iconic/images/tag-icon.png" />
+		<div class="fll">
+			<?php foreach(explode(',', substr($item->getFeatureId(),1,-1)) as $featureId): ?>
+				<?php $feature = Mage::getModel('job/feature')->load($featureId) ?>
+				<a class="tag" href="<?php echo $feature->getUrl() ?>" title="<?php echo Mage::helper('job')->getTransName($feature) ?>">
+					<?php echo Mage::helper('job')->getTransName($feature) ?>
+				</a>
+			<?php endforeach; ?>
+		</div>
+	</div>
+	<?php endif; ?>
+	<h3 class="iconic-id">
+		<?php echo $this->__('<b>No. %s</b>   |   登録日: %s', $item->getIconicId(), Mage::helper('job')->formatDate($item->getCreatedTime())) ?>
+	</h3>
+	<h1>
+		<?php echo $item->getTitle() ?>
+	</h1>
+	<div class="job-details-right">
+	
+		<!-- Job Details -->
+		<div class="job-details">
+			<table>
+				<tr>
+					<td class="tit"><?php echo $this->__('国') ?>:</td><td><?php echo $item->getCountry() ?></td>
+					<td class="tit"><?php echo $this->__('勤務地') ?>:</td><td><?php echo $item->getWorkLocation() ?></td>
+					<td class="tit"><?php echo $this->__('言語') ?>:</td><td><?php echo $item->getLanguage() ?></td>
+					<td class="tit"><?php echo $this->__('給与') ?>:</td><td><?php echo $item->getFullSalary() ?></td>
+				</tr>
+				<tr>
+					<td class="tit"><?php echo $this->__('業種') ?>:</td><td><?php echo $item->getCategoryName() ?></td>
+					<td class="tit"><?php echo $this->__('職種') ?>:</td><td><?php echo $item->getFunctionName() ?></td>
+					<td class="tit"><?php echo $this->__('レベル ') ?>:</td><td><?php echo $item->getLevel() ?></td>
+					<td class="tit"><?php echo $this->__('採用定数') ?>:</td><td><?php echo $item->getAmount() ?></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- Job Infomation -->
+	<div id="job-content">
+		<div id="job-info" class="clearfix">
+			<p class="text-orange tit fll">
+				<?php echo $this->__('業務内容') ?>
+			</p>
+			<div class="content fll">
+				<?php echo $item->getInfo() ?>
+			</div>
+		</div>
+		<!-- Job Requirement -->
+		<div id="job-requirement" class="clearfix">
+			<p class="text-orange tit fll">
+				<?php echo $this->__('必要スキル') ?>
+			</p>
+			<div class="content fll">
+				<?php echo $item->getRequirement() ?>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Job Actions -->
+	<div id="job-actions" class="clearfix">
+		<!-- Share -->
+		<div id="share" class="fll">
+			<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+				<a class="addthis_button_facebook"></a>
+				<a class="addthis_button_linkedin"></a>
+				<a class="addthis_button_google_plusone_share"></a>
+			</div>
+			<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-528575d340ba8794"></script>
+		</div>
+		<!-- End share -->
+		<div class="flr">
+			<a class="btn button-grey btn-back" href="#"><?php echo $this->__('戻る') ?></a>
+			<a class="btn button-blue btn-send <?php echo ($this->helper('customer')->isLoggedIn()) ? '' : 'btn-login' ?>" href="<?php echo Mage::helper('job')->getApplyLink($item->getId()) ?>"><?php echo $this->__('応募する') ?></a>
+		</div>
+	</div>
+</div>
+<script>
+(function($){
+	$(document).ready(function(){
+	    $('a.btn-back').click(function(e){
+	    	e.preventDefault();
+	        parent.history.back();
+	    });
+	});
+})(jQuery);
+</script>

@@ -1,0 +1,28 @@
+<div class="success-page createcv">
+	<h3><?php echo $this->__('お申込み、有難うございました！') ?></h3>
+	<p><?php echo $this->__('転職支援サービスへのお申込みが完了しました。') ?></p>
+	<br />
+	<p><?php echo $this->__('アジア転職のプロであるアイコニックのキャリアアドバイザーから、<br />一両日中に、面談日程調整のための連絡を入れさせて頂きます。') ?></p>
+	<br />
+	<p><?php echo $this->__('%sさんのアジア転職が成功するように、一緒にがんばりましょう！', Mage::getSingleton('customer/session')->getCustomer()->getFirstname()) ?></p>
+	<br />
+	<p><?php echo $this->__('このページは<span id="countdown">5</span>秒後に自動的にホームページへ切り替わります。') ?></p>
+</div>
+
+<script type="text/javascript">
+	(function () {
+	    var timeLeft = 5,
+	        cinterval;
+	
+	    var timeDec = function (){
+	        timeLeft--;
+	        document.getElementById('countdown').innerHTML = timeLeft;
+	        if(timeLeft === 0){
+	        	window.location = '/';
+	            clearInterval(cinterval);
+	        }
+	    };
+	
+	    cinterval = setInterval(timeDec, 1000);
+	})();
+</script>
