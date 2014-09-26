@@ -6,8 +6,9 @@ $installer->startSetup();
 $installer->run("
 
 CREATE TABLE {$this->getTable('job/country')} (
-   `listcountry_id` int(11) AUTO_INCREMENT NOT NULL
+   `country_id` int(11) AUTO_INCREMENT NOT NULL
   ,`name` varchar(55) NOT NULL
+  ,`code` varchar(3) NOT NULL
   ,`job_flag` tinyint NOT NULL  DEFAULT 0
   ,`url_key` varchar(50) NULL
   ,`delete_flag` tinyint NOT NULL  DEFAULT 0

@@ -1,0 +1,209 @@
+#job-title{
+	padding: 0 20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+#job-title > span{
+	margin: 0 8px;
+}
+form#form-apply input,
+form#form-apply textarea{
+	border-color: #c6c7c9;
+	background-color: #e6e6e7;
+	border-radius: 4px;
+}
+form#form-apply input{
+	font-weight: bold;
+}
+form#form-apply .row{
+	padding: 3px 0px;
+}
+.row textarea{
+	width: 99%;
+	height: 120px;
+}
+.row input[type="file"]{
+	width: 96%;
+}
+.row .btn{
+	padding: 5px;
+	width: 130px;
+	font-size: 20px;
+	margin-right: 10px;
+	margin-top: 20px;
+}
+.row a.btn{
+	display: inline-block;
+	padding: 5px;
+	color: #fff;
+	text-decoration: none;
+}
+.row .files{
+	margin-top: 20px;
+}
+.row .files .file-uploaded > a.file-name{
+	color: #000;
+	font-weight: bold;
+	text-decoration: underline;
+}
+.row .files .file-uploaded  > a:hover{
+	color: #1197EC;
+}
+#fileupload:after {
+	content: "You can drag & drop file(s) here";
+	margin-left: 132px;
+	float: right;
+	font-style: italic;
+}
+#progress{
+	margin: 10px 0;
+	display: none;
+}
+#progress .bar{
+	height: 20px;
+	background-color: #1197EC;
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+}
+
+div#job-same-category{
+	border: solid 4px #4571eb;
+	background-color: #e6e6e7;
+	padding: 20px;
+}
+div#job-same-category fieldset{
+	border-top: 2px groove #4571EB;
+}
+div#job-same-category fieldset legend{
+	font-weight: bold;
+	padding-right: 10px;
+	color: #4571EB;
+}
+div#job-same-category ul.jobs-list li .title{
+	color: #fff;
+	font-weight: bold;
+	padding: 10px;
+	background-color: #919294;
+	font-size: 17px;
+	margin-bottom: 0;
+	text-align: left;
+}
+div#job-same-category ul.jobs-list{
+	list-style: none;
+	margin: 10px 0;
+}
+div#job-same-category ul.jobs-list li{
+	padding: 10px 20px;
+}
+div#job-same-category ul.jobs-list li + li{
+	border-top: solid 1px #dcddde;
+}
+div#job-same-category ul.jobs-list li .job-details{
+	margin-bottom: 15px;
+}
+div#job-same-category ul.jobs-list li span.created-time{
+	margin-right: 8px;
+}
+div#job-same-category a.view-more-category{
+	margin-top: 10px;
+	text-decoration: underline;
+}
+div#job-same-category ul.jobs-list li .actions a{
+	color: #fff;
+	padding: 3px 10px;
+	text-decoration: none;
+	background-color: #a5bbf5;
+	border-radius: 3px;
+	border-bottom: solid 2px #8faaf3;
+	display: inline-block;
+}
+div#job-same-category ul.jobs-list li .actions a.apply{
+	background-color: #6a8def;
+	border-color: #4571eb;
+}
+div#job-same-category ul.jobs-list li .actions a:hover{
+	background-color: #a1c5f9;
+	border-color: #79acf6;
+}
+div#job-same-category ul.jobs-list li .actions a+a{
+	margin-left: 10px;
+}
+
+.apply-success-message{
+	display: block;
+	border: 10px solid transparent;
+	background: url('../images/apply-success-girl.png') 40px bottom no-repeat #fff;
+	border-image: url('../images/border-blue.png') 10 8 stretch;
+	-webkit-border-image: url('../images/border-blue.png') 10 8 stretch;
+	height: 157px;
+	-o-border-image: url('../images/border-blue.png') 10 8 stretch;
+	margin: 20px 0;
+}
+.apply-success-message .message{
+	color: #000;
+	width: 70%;
+	font-size: 16px;
+	float: right;
+	margin-top: 50px;
+	padding-right: 20px;
+}
+.apply-success-message .message p.success{
+	font-size: 21px;
+	font-weight: bold;
+}
+.apply-success-message .message > p:first-child+p{
+	margin-top: 15px;
+}
+.iconic-id{
+	padding: 3px 10px;
+	color: #000;
+	display: inline-block;
+}
+h1,
+.jobs-list p.title{
+	color: #272525;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: left;
+}
+.job-list p.title{
+	color: #fff;
+	font-weight: bold;
+	padding: 10px;
+	background-color: #919294;
+	font-size: 17px;
+	margin-bottom: 0;
+	text-align: left;
+}
+form .align-center{
+	text-align: center;
+}
+form .align-center > .width-30{
+	width: 28%;
+}
+#search-block{
+	display: none;
+}
+.job-details table{
+	width: 100%;
+	border: solid 1px #999b9d;
+	border-top: none;
+}
+.job-details table tr td{
+	width: 115px;
+	vertical-align: top;
+	padding: 10px;
+	font-size: 13px;
+	letter-spacing: -1px;
+}
+.job-details table tr+tr{
+	border-top: solid 1px #999b9d;
+}
+.job-details table tr td.tit{
+	width: 70px;
+	font-weight: bold;
+	color: #000;
+	background-color: #dbdcdd;
+	text-align: right;
+}

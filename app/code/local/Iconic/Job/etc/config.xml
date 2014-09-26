@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Iconic_Job>
-            <version>0.4.3</version>
+            <version>0.1.0</version>
         </Iconic_Job>
     </modules>
     <frontend>
@@ -92,14 +92,14 @@
                 <class>Iconic_Job_Model_Langlevel</class>
                 <resourceModel>job_langlevel</resourceModel>
             </langlevel>
-            <salary_currency>
-                <class>Iconic_Job_Model_SalaryCurrency</class>
-                <resourceModel>job_salary_currency</resourceModel>
-            </salary_currency>
-            <salary_type>
-                <class>Iconic_Job_Model_SalaryType</class>
-                <resourceModel>job_salary_type</resourceModel>
-            </salary_type>
+            <salarycurrency>
+                <class>Iconic_Job_Model_Salarycurrency</class>
+                <resourceModel>job_salarycurrency</resourceModel>
+            </salarycurrency>
+            <salarytype>
+                <class>Iconic_Job_Model_Salarytype</class>
+                <resourceModel>job_salarytype</resourceModel>
+            </salarytype>
             <status>
                 <class>Iconic_Job_Model_Status</class>
                 <resourceModel>job_status</resourceModel>
@@ -140,12 +140,12 @@
                     <langlevel>
                         <table>m_job_langlevel</table>
                     </langlevel>
-                    <salary_currency>
+                    <salarycurrency>
                         <table>m_salary_currency</table>
                     </salary_currency>
                     <salary_type>
                         <table>m_salary_type</table>
-                    </salary_type>
+                    </salarytype>
                 </entities>
             </job_mysql4>
         </models>

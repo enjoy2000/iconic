@@ -1,0 +1,170 @@
+#main .main{
+	padding: 20px;
+}
+.manage-job-menu{
+	padding-bottom: 10px;
+	padding-left: 20px;
+}
+.manage-job-menu > a{
+	padding: 0px 10px;
+	text-decoration: none;
+	color: #b0b2b4;
+	font-weight: bold;
+	-webkit-transition: color 200ms,background-color 200ms;
+	-moz-transition: color 200ms,background-color 200ms;
+	-o-transition: color 200ms,background-color 200ms;
+	transition: color 200ms,background-color 200ms;
+}
+.manage-job-menu > a + a{
+	border-left: solid 1px #b0b2b4;
+}
+.manage-job-menu > a.active,
+.manage-job-menu > a:hover{
+	color: #000;
+}
+.manage-job-menu .post-job > a{
+	padding: 5px 20px;
+	border-radius: 3px;
+	border: solid 1px #E67E22;
+	color: #E67E22;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-transition: color 200ms,background-color 200ms;
+	-moz-transition: color 200ms,background-color 200ms;
+	-o-transition: color 200ms,background-color 200ms;
+	transition: color 200ms,background-color 200ms;
+}
+.manage-job-menu .post-job > a:hover{
+	background-color: #E67E22;
+	color: #fff;
+}
+div.results > table{
+	width: 100%;
+	margin-top: 10px;
+	font-size: 13px;
+}
+div.results > table tr td{
+	padding: 10px;
+}
+div.results > table thead{
+	border: solid 1px #A8A8A8;
+	background-color: #E2E2E2;
+}
+div.results > table thead tr td{
+	font-weight: bold;
+	color: #000;
+}
+div.results > table tbody tr.job{
+	border: solid 1px #A8A8A8;
+	border-top-color: transparent;
+}
+div.results > table tbody tr.job.active{
+	border-bottom-color: transparent;
+}
+div.results > table tbody tr.job td.action{
+	color: #f9690e;
+	text-decoration: none;
+	font-size: 12px;
+}
+div.results > table tbody tr.job td.action > a{
+	color: #f9690e;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+div.results > table tbody tr.job td.actions > a{
+	display: inline-block;
+	background: url('../images/actions/edit.png') center no-repeat #b2b2b2;
+	overflow: hidden;
+	text-indent: -9999px;
+	text-align: left;
+	width: 24px;
+	height: 24px;
+	border-radius: 2px;
+	-webkit-transition: color 200ms,background-color 200ms;
+	-moz-transition: color 200ms,background-color 200ms;
+	-o-transition: color 200ms,background-color 200ms;
+	transition: color 200ms,background-color 200ms;
+}
+div.results > table tbody tr.job td.actions > a:hover{
+	background-color: #000;
+}
+div.results > table tbody tr.job td.actions a.details {
+	background-image: url('../images/actions/details.png');
+}
+div.results > table tbody tr.job td.actions a.delete {
+	background-image: url('../images/actions/delete.png');
+}
+div.results > table tbody tr.job td.actions > a.details.active{
+	background-color: #000;
+}
+div.results > table tbody tr.job td.actions > a.details.active:hover{
+	background-color: #b2b2b2;
+}
+div.results > table tbody tr.pager > td{
+	text-align: center;
+	border-top-width: 0;
+}
+div.results > table tr td.title{
+	width: 250px;
+	padding-left: 30px;
+}
+div.results > table tbody tr.detail{
+	display: none;
+}
+div.results > table tbody tr.detail > td{
+	padding: 0;
+	
+}
+div.results > table tbody tr.detail td > table{
+	width: 920px;
+	table-layout: fixed;
+	border: solid 1px #f9690e;
+	background-color: #dfe4f1;
+}
+div.results > table tbody tr.detail td > table tr td{
+	color: #000;
+	width: 50%;
+	padding: 10px 20px;
+}
+div.results > table tbody tr.detail td > table tr td:first-child{
+	padding-left: 30px;
+}
+div.results > table tbody tr.detail td > table tr td span{
+	color: #636466;
+}
+div.results > table tbody tr.detail td > table tr:first-child td{
+	border-bottom: dotted 1px #A8A8A8;
+}
+div.results > table tbody tr.detail td > table tr.info{
+	border-top: solid 1px #A8A8A8;
+}
+div.results > table tbody tr.detail td > table tr.info ul{
+	list-style: initial;
+	margin-left: 17px;
+}
+div.results > table tbody tr.detail td > table tr.info ul ul{
+	list-style: circle;
+}
+tr.pager{
+	text-align: center;
+}
+tr.pager .pager{
+	margin-top: 10px;
+}
+tr.pager ol li{
+	display: inline-block;
+}
+tr.pager ol li.current{
+	padding: 0 7px;
+	background-color: #f9690e;
+	color: #fff;
+	border: solid 1px #f9690e;
+}
+tr.pager ol li a{
+	padding: 0 7px;
+	background-color: #fff;
+	color: #f9690e;
+	border: solid 1px #f9690e;
+	text-decoration: none;
+}

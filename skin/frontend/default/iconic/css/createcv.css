@@ -1,0 +1,149 @@
+.row{
+	width: 100%;
+	display: block;
+	position: relative;
+	padding: 8px 0;
+}
+.row input{
+}
+.row textarea{
+	padding: 10px;
+	height: 100px;
+}
+.row.row2 textarea{
+	width: 335px;
+}
+.row.row1 textarea{
+	width: 740px;
+}
+.row:after{
+	clear: both;
+	content: ".";
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+.row .first{
+	float: left;
+	width: 357px;
+}
+.row .last{
+	float: right;
+	width: 357px;
+}
+div.first,
+div.last{
+	text-align: center;
+}
+.row.row2 div.div4 > select{
+	width: 80px;
+	padding-left: 10px;
+}
+.row.row2 > input{
+	width: 335px;
+}
+.row.row2 > div > select{
+	width: 100px;
+}
+.row.row2 > div > input{
+	width: 80px;
+}
+.row.row2 > select{
+	width: 357px;
+}
+input[type="radio"],
+input[type="checkbox"]{
+	width: auto;
+	display: inline;
+}
+.row.lang > div > *{
+	display: inline-block;
+}
+.row.lang label{
+	width: 50px;
+	text-align: left;
+}
+.row.lang > div > select{
+	width: 302px;
+}
+textarea{
+	width: 324px;
+	resize: vertical;
+	margin-top: 10px;
+}
+.row.heading{
+	margin-top: 20px;
+}
+.row.heading > span{
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #636466;
+	padding-bottom: 5px;
+	background: url('../images/long-black-tit.png') left bottom no-repeat transparent;
+}
+.row.heading > .last{
+	letter-spacing: -1px;
+}
+.row.heading > .last input{
+	margin-top: 0;
+	margin-left: 10px;
+}
+#main .main{
+	background-color: transparent;
+	border: none;
+}
+.create-cv{
+	width: 760px;
+	margin: auto;
+}
+.row.submit{
+	text-align: center;
+}
+.page-title h1{
+	text-align: center;
+	color: #000;
+	font-weight: bold;
+	font-size: 22px;
+}
+.row.heading{
+	color: #000;
+	font-weight: normal;
+	font-size: 20px;
+	padding-bottom: 5px;
+	border-bottom: solid 1px #000;
+	outline-bottom: solid 1px grey;
+	margin-bottom: 20px;
+	margin-top: 50px;
+}
+.row.dashed-border{
+	border-top: dashed 2px #929496;
+	margin: 20px 0;
+}
+.row.row2 div.income{
+	text-align: left;
+}
+.row.row2 div.income > input{
+	width: 300px;
+}
+.row.degree > select{
+	width: 150px;
+}
+input[type="radio"]{
+	margin-left: 20px;
+}
+.row.row2 .postcode > input{
+	width: 130px;
+}
+p.after-numbercompany{
+	font-size: 11px;
+}
+#search-block{
+	display: none;
+}
+.workingtime p.small{
+	display: none;
+	float: right;
+	font-size: 12px;
+}

@@ -1,0 +1,75 @@
+.job-wrapper{
+	margin-top: 30px;
+}
+.iconic-id{
+	padding: 3px 10px;
+	color: #000;
+	display: inline-block;
+}
+h1{
+	color: #4571EB;
+	font-weight: bold;
+	padding: 5px 10px;
+	background-color: #cad6f8;
+	font-size: 15px;
+	border-bottom: solid 2px #4571EB;
+	margin-bottom: 0;
+	text-align: left;
+}
+.job-details table{
+	width: 100%;
+	border: solid 1px #999b9d;
+	border-top: none;
+}
+.job-details table tr td{
+	width: 115px;
+	vertical-align: top;
+	padding: 10px;
+	font-size: 13px;
+	letter-spacing: -1px;
+}
+.job-details table tr+tr{
+	border-top: solid 1px #999b9d;
+}
+.job-details table tr td.tit{
+	width: 70px;
+	font-weight: bold;
+	color: #000;
+	background-color: #dbdcdd;
+	text-align: right;
+}
+#job-content{
+	margin: 20px 0;
+}
+#job-content > div{
+	padding: 20px 35px;
+	background-color: #e6e6e7;
+}
+#job-content > div+div{
+	border-top: solid 1px #aaacae;
+}
+#job-content .tit{
+	display: block;
+	width: 150px;
+	font-weight: bold;
+	font-size: 17px;
+}
+#job-content .fll+.fll{
+	width: 600px;
+}
+#job-actions .flr a{
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 25px;
+	font-weight: normal;
+	display: inline-block;
+}
+#job-actions .flr a+a{
+	margin-left: 20px;
+}
+#job-actions .fll a+a{
+	margin-left: 18px;
+}
+.job-wrapper{
+	color: #58595b;
+}

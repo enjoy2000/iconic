@@ -1,0 +1,132 @@
+/*
+	SEARCH RESULTS
+*/
+#main .main{
+	border: solid 1px #4571EB;
+	border-radius: 8px;
+}
+.job-wrapper{
+	color: #636466;
+	padding: 25px 0;
+}
+.job-wrapper + .job-wrapper{
+	border-top: solid 2px #cccdce;
+}
+.job-wrapper .iconic-id{
+	padding: 3px 10px;
+	color: #000;
+	display: inline-block;
+}
+.job-wrapper b{
+	color: #272525;
+}
+.job-wrapper .title{
+	color: #4571EB;
+	font-weight: bold;
+	padding: 5px 10px;
+	background-color: #cad6f8;
+	font-size: 15px;
+	border-bottom: solid 2px #4571EB;
+}
+.job-wrapper table{
+	width: 100%;
+	border: solid 1px #999b9d;
+	border-top: none;
+}
+.job-wrapper table tr td{
+	width: 115px;
+	vertical-align: top;
+	padding: 10px;
+	font-size: 13px;
+	letter-spacing: -1px;
+}
+.job-wrapper table tr+tr{
+	border-top: solid 1px #999b9d;
+}
+.job-wrapper table tr td.tit{
+	width: 70px;
+	font-weight: bold;
+	color: #000;
+	background-color: #dbdcdd;
+	text-align: right;
+}
+.job-wrapper .actions{
+	margin-top: 20px;
+}
+.job-wrapper .actions a{
+	color: #fff;
+	padding: 3px 10px;
+	text-decoration: none;
+	background-color: #a5bbf5;
+	border-radius: 3px;
+	border-bottom: solid 2px #8faaf3;
+}
+.job-wrapper .actions a.apply{
+	background-color: #6a8def;
+	border-color: #4571eb;
+}
+.job-wrapper .actions a:hover{
+	background-color: #a1c5f9;
+	border-color: #79acf6;
+}
+.job-wrapper .actions a+a{
+	margin-left: 10px;
+}
+.info-search .amount span{
+	color: #f58220;
+}
+.info-search .inline-b{
+	margin-right: 20px;
+}
+.info-search .inline-b:last-child{
+	margin-right: 0;
+}
+.info-search .inline-b span{
+	color: #f58220;
+	font-weight: bold;
+}
+.pager{
+	text-align: center;
+}
+.pager ol li a{
+	padding: 0px 7px;
+	border: solid 1px #4571EB;
+	color: #4571EB;
+	text-decoration: none;
+}
+.pager ol li a:hover{
+	border-color: #000;
+}
+.pager ol li{
+	display: inline;
+}
+.pager ol li.current{
+	color: #000;
+	border: solid 1px #000;
+	padding: 0 7px;
+}
+.no-results{
+	margin-top: 20px;
+}
+.no-results .fll.text{
+	margin-left: 10px;
+}
+h2.blue-tit{
+	border: none
+}
+.info-search{
+	padding-bottom: 10px;
+	border-bottom: solid 2px #4571EB;
+}
+.job+.job{
+	border-top: solid 1px #d7d8d9;
+	position: relative;
+}
+.job+.job:before {
+	content: "";
+	position: absolute;
+	display: block;
+	top: 0px;
+	border-top: solid 1px #c7c8c9;
+	width: 100%;
+}

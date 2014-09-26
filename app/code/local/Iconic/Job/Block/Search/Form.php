@@ -41,6 +41,7 @@ class Iconic_Job_Block_Search_Form extends Iconic_Job_Block_Search
 		//get list location and category
 		if (!$this->hasData('languageList')){
 			$language = Mage::getModel('job/language')->getCollection();
+            $listLanguage = '';
 			if ($this->getMultiLanguage()){
 				foreach ($language as $loc){
 					$name = Mage::helper('job')->getTransName($loc);
@@ -64,7 +65,7 @@ class Iconic_Job_Block_Search_Form extends Iconic_Job_Block_Search
 	public function getLocationList(){
 		//get list location and category
 		if (!$this->hasData('locationList')){
-			$countries = Mage::getModel('job/country')->getCollection();
+			$countries = Mage::getModel('job/country')->getCollection()->addFieldToFilter('job_flag', array('like'=>1));
 			$listLocation = '';
 			foreach($countries as $country){
 				$selected = '';

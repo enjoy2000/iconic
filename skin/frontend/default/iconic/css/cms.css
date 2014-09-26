@@ -1,0 +1,1122 @@
+body.cms-page-view #header-landing,
+body.cms-page-view #banner,
+body.cms-page-view #blog-news .wrapper > *{
+	display: none;
+}
+body.cms-page-view #blog-news{
+	padding-bottom: 50px;
+}
+body.cms-page-view #main .main{
+	padding: 0;
+	color: #111C3B;
+}
+body.cms-page-view .page-title{
+	padding: 40px;
+	border-bottom: solid 1px #4571EB;
+	padding-bottom: 10px;
+	padding-top: 15px;
+}
+body.cms-page-view .page-title h1{
+	text-align: left;
+	color: #4571EB;
+	letter-spacing: 0;
+	margin-bottom: 5px;
+}
+body.cms-page-view .std .world-map{
+	background: url('../images/cms/world-map-jp.jpg') top left no-repeat;
+	height: 537px;
+	position: relative;
+}
+body.cms-page-view.en .std .world-map{
+	background: url('../images/cms/world-map.png') top left no-repeat;
+	height: 537px;
+	position: relative;
+}
+body.cms-page-view .world-map .text p,
+body.cms-page-view .world-map .text ul li{
+	font-size: 14px;
+	font-weight: bold;
+	color: #000;
+	letter-spacing: -1px;
+	line-height: 21px;
+}
+body.cms-page-view .world-map .text p{
+	text-align: center;
+}
+
+body.cms-page-view .world-map .text .button{
+	margin-top: 20px;
+}
+body.cms-page-view .world-map .text .button a{
+	display: block;
+	padding: 5px 20px;
+}
+/*
+ * about-iconic
+ */
+#about-iconic .world-map .text{
+	width: 380px;
+	position: absolute;
+	right: 64px;
+	top: 200px;
+}
+#about-iconic .world-map .text p{
+	font-size: 15px;
+	font-weight: bold;
+	color: #000;
+	text-align: center;
+	letter-spacing: -1px;
+	line-height: 21px;
+}
+#about-iconic .world-map .text p+p{
+	margin-top: 8px;
+	margin-bottom: 70px;
+}
+#about-iconic .content{
+	padding: 25px 65px;
+	padding-bottom: 60px;
+}
+#about-iconic .text p.about-tit{
+	color: #4571EB;
+	font-weight: bold;
+	font-size: 24px;
+}
+.cms-blue-tit{
+	font-weight: bold;
+	color: #4571EB;
+	margin-bottom: 20px;
+	font-size: 21px;
+}
+#about-iconic .list h4{
+	padding-left: 17px;
+	background: url('../images/cms/orange-icon.png') left center no-repeat;
+	color: #000;
+	font-weight: bold;
+}
+#about-iconic .list+.list{
+	margin-top: 20px;
+}
+#about-iconic .list+.list+.list{
+	margin-bottom: 20px;
+}
+#about-iconic .button{
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+#about-iconic .button a{
+	padding: 10px 10px;
+	padding-left: 48px;
+	background: url('../images/cms/submit-icon.png') 17px center no-repeat #dc8a55;
+	border-bottom: solid 2px #b85f26;
+	color: #fff;
+	font-size: 12px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 5px;
+	margin: auto
+}
+/*
+ * for-candidate-in-japan
+ */
+#for-candidate-in-japan .world-map .text{
+	width: 330px;
+	position: absolute;
+	right: 20px;
+	top: 106px;
+}
+#for-candidate-in-japan .world-map .text p{
+	text-align: left;
+}
+#for-candidate-in-japan .world-map .text ul{
+	margin: 20px 0;
+}
+#for-candidate-in-japan .world-map .text ul li{
+	padding-left: 17px;
+	background: url('../images/cms/orange-icon.png') left center no-repeat;
+	font-size: 13px;
+	margin-bottom: 5px;
+}
+#for-candidate-in-japan h2{
+	padding: 10px;
+	text-align: center;
+	background: url('../images/cms/seeker-bg.png') center top no-repeat;
+	height: 37px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 35px;
+}
+#for-candidate-in-japan .content ul{
+	width: 450px;
+	margin: auto;
+}
+#for-candidate-in-japan .content ul li{
+	border-bottom: solid 1px #a2b8f5;
+	padding: 30px;
+	padding-left: 120px;
+	padding-right: 10px;
+	position: relative;
+}
+#for-candidate-in-japan .content ul li:after{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: solid 10px transparent;
+	border-top-color: #a2b8f5;
+	bottom: -20px;
+	left: 50%;
+}
+#for-candidate-in-japan .content ul li h5{
+	color: #000;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 25px;
+}
+#for-candidate-in-japan .content ul li h5 span{
+	color: #fff;
+	padding: 0px 7px;
+	background-color: #000;
+	border-radius: 3px;
+}
+#for-company-in-japan .content ul li h5{
+	color: #000;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 25px;
+}
+#for-company-in-japan .content ul li h5 span{
+	color: #fff;
+	padding: 0px 7px;
+	background-color: #000;
+	border-radius: 3px;
+}
+#for-candidate-in-japan .content ul li p{
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: -0.8px;
+	margin-top: 5px;
+}
+#for-candidate-in-japan .content ul li:first-child{
+	background: url('../images/cms/seeker1.png') 30px center no-repeat;
+}
+#for-candidate-in-japan .content ul li:first-child+li{
+	background: url('../images/cms/seeker2.png') 30px center no-repeat;
+}
+#for-candidate-in-japan .content ul li:first-child+li+li{
+	background: url('../images/cms/seeker3.png') 30px center no-repeat;
+}
+#for-candidate-in-japan .content ul li:first-child+li+li+li{
+	background: url('../images/cms/seeker4.png') 30px center no-repeat;
+}
+#for-candidate-in-japan .content ul li:first-child+li+li+li+li{
+	background: url('../images/cms/seeker5.png') 10px center no-repeat;
+}
+#for-candidate-in-japan .content ul li:first-child+li+li+li+li+li{
+	background: url('../images/cms/seeker6.png') 30px center no-repeat;
+}
+#for-candidate-in-japan .content .button{
+	text-align: center;
+	margin: 50px auto;
+}
+#for-candidate-in-japan .content .button a{
+	padding: 8px 20px;
+	padding-left: 50px;
+	background: url('../images/cms/submit-icon.png') 10px center no-repeat #dc8a55;
+	border-bottom: solid 3px #b85f26;
+	color: #fff;
+	font-size: 16px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 5px;
+}
+#for-candidate-in-japan .content .button a span{
+	font-size: 14px;
+}
+#for-candidate-in-japan .text .button{
+	text-align: center;
+}
+#for-candidate-in-japan .text .button a{
+	padding: 10px 10px;
+	padding-left: 48px;
+	background: url('../images/cms/submit-icon.png') 17px center no-repeat #dc8a55;
+	border-bottom: solid 2px #b85f26;
+	color: #fff;
+	font-size: 12px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 3px;
+	width: 220px;
+}
+#for-candidate-in-japan .text .button a span{
+	font-size: 13px;
+}
+/*
+ * for-company-in-japan
+ */
+#for-company-in-japan .world-map .text{
+	width: 317px;
+	position: absolute;
+	right: 30px;
+	top: 160px;
+}
+#for-company-in-japan .world-map .text p{
+	margin-bottom: 20px;
+	text-align: left;
+	font-size: 14px;
+	margin-left: 20px;
+}
+#for-company-in-japan .world-map .text p+p{
+	margin-bottom: 0px;
+}
+#for-company-in-japan .world-map .text ul{
+	margin-left: 20px;
+}
+#for-company-in-japan .world-map .text > ul > li{
+	padding-left: 17px;
+	background: url('../images/cms/orange-icon.png') left center no-repeat;
+	font-size: 13px;
+	margin-bottom: 5px;
+}
+#for-company-in-japan .world-map .text > ul >ul{
+	list-style-type: disc;
+	margin-left: 35px;
+}
+#for-company-in-japan .world-map .text > ul >ul >li{
+	padding: 0;
+}
+#for-company-in-japan .world-map .text .button{
+	text-align: left;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+#for-company-in-japan h2{
+	padding: 10px;
+	text-align: center;
+	background: url('../images/cms/seeker-bg.png') center top no-repeat;
+	height: 37px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 35px;
+}
+#for-company-in-japan .content ul{
+	width: 450px;
+	margin: auto;
+}
+#for-company-in-japan .content ul li{
+	border-bottom: solid 1px #a2b8f5;
+	padding: 30px;
+	padding-left: 120px;
+	padding-right: 10px;
+	position: relative;
+}
+#for-company-in-japan .content ul li:after{
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: solid 10px transparent;
+	border-top-color: #a2b8f5;
+	bottom: -20px;
+	left: 50%;
+}
+#for-company-in-japan .content ul li h5{
+	color: #000;
+	font-weight: bold;
+}
+#for-company-in-japan .content ul li p{
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: -0.8px;
+	margin-top: 5px;
+}
+#for-company-in-japan .content ul li:first-child{
+	background: url('../images/cms/seeker1.png') 30px center no-repeat;
+}
+#for-company-in-japan .content ul li:first-child+li{
+	background: url('../images/cms/rec2.png') 30px center no-repeat;
+}
+#for-company-in-japan .content ul li:first-child+li+li{
+	background: url('../images/cms/seeker4.png') 30px center no-repeat;
+}
+#for-company-in-japan .content ul li:first-child+li+li+li{
+	background: url('../images/cms/seeker2.png') 30px center no-repeat;
+}
+#for-company-in-japan .content ul li:first-child+li+li+li+li{
+	background: url('../images/cms/rec5.png') 30px center no-repeat;
+}
+#for-company-in-japan .content ul li:first-child+li+li+li+li+li{
+	background: url('../images/cms/seeker6.png') 30px center no-repeat;
+}
+#for-company-in-japan .content ul li:first-child+li+li+li+li+li+li{
+	background: url('../images/cms/rec7.png') 30px center no-repeat;
+}
+#for-company-in-japan .content .button{
+	text-align: center;
+	margin: 50px auto;
+}
+#for-company-in-japan .content .button a{
+	padding: 8px 20px;
+	padding-left: 50px;
+	background: url('../images/cms/submit-icon.png') 10px center no-repeat #dc8a55;
+	border-bottom: solid 3px #b85f26;
+	color: #fff;
+	font-size: 21px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 5px;
+}
+#for-company-in-japan .content .button a span{
+	font-size: 14px;
+}
+#for-company-in-japan .text .button{
+	text-align: center;
+}
+#for-company-in-japan .text .button a{
+	padding: 3px 10px;
+	padding-left: 40px;
+	background: url('../images/cms/submit-icon.png') 5px center no-repeat #dc8a55;
+	border-bottom: solid 2px #b85f26;
+	color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 3px;
+	display: inline-block;
+}
+#for-company-in-japan .tit-content{
+	padding: 25px 65px;
+	background: url('../images/cms/tit-content.png') top left no-repeat;
+}
+#for-company-in-japan h4,
+#for-company-in-japan h5,
+#for-company-in-japan h6{
+	color: #000;
+	font-weight: bold;
+	margin-top: 20px;
+}
+#for-company-in-japan h5.icon{
+	padding-left: 17px;
+	background: url('../images/cms/orange-icon.png') left center no-repeat;
+	font-size: 13px;
+}
+/*
+ * faq
+ */
+#faq{
+	padding: 30px 70px;
+}
+#faq p.question{
+	color: #000;
+	font-weight: bold;
+	margin-top: 30px;
+}
+#faq span.answer{
+	color: #000;
+	font-weight: bold;
+}
+#faq h4.cms-blue-tit{
+	margin-top: 20px;
+}
+/*
+ * company-profile
+ */
+#company-profile .top{
+	padding: 25px 70px;
+	background: url('../images/cms/company-bg.png') top center no-repeat #f8f8f8;
+}
+#company-profile .top .tit{
+	color: #4571EB;
+	text-align: center;
+}
+#company-profile .top .tit h2{
+	font-weight: bold;
+	margin-bottom: 5px;
+	font-size: 24px;
+}
+#company-profile .top .address{
+	margin-top: 50px;
+}
+#company-profile .top .address > div{
+	width: 46%;
+}
+#company-profile .top .address > div.fll .info{
+	margin-left: 15px;
+	line-height: 24px;
+}
+#company-profile .top .address > div.flr .info{
+	float: none;
+}
+#company-profile .top .address > div.flr .clearfix+.clearfix{
+	margin-top: 20px;
+}
+#company-profile .top .address > div.flr img.fll{
+	margin-right: 15px;
+}
+#company-profile .under-top{
+	text-align: center;
+	background-color: #f8f8f8;
+}
+#company-profile .under-top .mid-tit{
+	padding: 10px 20px;
+	padding-bottom: 0;
+	background-color: #f8f8f8;
+	display: inline-block;
+	font-weight: bold;
+	font-size: 19px;
+	color: #000;
+}
+#company-profile .quote{
+	padding: 35px 150px;
+	background-image: url('../images/cms/quote-left.png'), url('../images/cms/quote-right.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: 90px 30px, right 90px bottom 30px;
+	position: relative;
+}
+#company-profile .quote p+p{
+	margin-top: 20px;
+}
+#company-profile .timeline{
+	background: url('../images/cms/timeline-new.png') center top no-repeat #dbdcdd;
+	height: 973px;
+	position: relative;
+}
+#company-profile .timeline > p{
+	position: absolute;
+	display: inline-block;
+	left: 48%;
+	color: #fff;
+}
+#company-profile .timeline > div{
+	position: absolute;
+	display: inline-block;
+}
+#company-profile .timeline > div > .tit{
+	color: #fff;
+	font-weight: bold;
+	padding: 5px 15px;
+	letter-spacing: -1px;
+	font-size: 13px;
+}
+#company-profile .timeline > div > p{
+	padding: 5px 15px;
+	background-color: #babbbc;
+	color: #636466;
+	font-weight: bold;
+}
+#company-profile .timeline > div > .tit.blue{
+	background-color: #8faaf3;
+}
+#company-profile .timeline > div > .tit.orange{
+	background-color: #f58220;
+}
+#company-profile .timeline > div > .tit:before{
+	content: "";
+	position: absolute;
+	border: solid 10px transparent;
+	border-width: 5px 10px;
+	top: 10px;
+	width: 0;
+	height: 0;
+}
+#company-profile .timeline > p.y2004{
+	top: 37px;
+}
+#company-profile .timeline > p.y2007{
+	top: 137px;
+}
+#company-profile .timeline > p.y2008{
+	top: 257px;
+}
+#company-profile .timeline > p.y2010{
+	top: 380px;
+}
+#company-profile .timeline > p.y2012{
+	top: 510px;
+}
+#company-profile .timeline > p.y2013{
+	top: 635px;
+}
+#company-profile .timeline > p.y2014{
+	top: 770px;
+}
+#company-profile .timeline > div.e2004{
+	width: 230px;
+	top: 80px;
+	right: 100px;
+}
+#company-profile .timeline > div.e2004.e2004-2{
+	top: 45px;
+}
+#company-profile .timeline > div.e2004 .tit:before{
+	left: -20px;
+	border-right-color: #8faaf3;
+}
+#company-profile .timeline > div.e2007{
+	width: 268px;
+	top: 163px;
+	left: 100px;
+}
+#company-profile .timeline > div.e2007 .tit:before{
+	right: -20px;
+	border-left-color: #8faaf3;
+}
+#company-profile .timeline > div.e2008{
+	width: 230px;
+	top: 278px;
+	right: 100px;
+}
+#company-profile .timeline > div.e2008 .tit:before{
+	left: -20px;
+	border-right-color: #f58220;
+}
+#company-profile .timeline > div.e2010{
+	width: 285px;
+	top: 396px;
+	left: 100px;
+	color: #fff;
+	font-weight: bold;
+}
+#company-profile .timeline > div.e2010:before{
+	right: -20px;
+	content: "";
+	position: absolute;
+	border: solid 10px transparent;
+	border-width: 5px 10px;
+	top: 10px;
+	width: 0;
+	height: 0;
+	border-left-color: #8faaf3;
+}
+#company-profile .timeline > div.e2012{
+	width: 274px;
+	top: 531px;
+	right: 100px;
+}
+#company-profile .timeline > div.e2012 .tit:before{
+	left: -20px;
+	border-right-color: #8faaf3;
+}
+#company-profile .timeline > div.e2013{
+	width: 298px;
+	top: 660px;
+	left: 100px;
+}
+#company-profile .timeline > div.e2013 .tit:before{
+	right: -20px;
+	border-left-color: #f58220;
+}
+#company-profile .timeline > div.e2014{
+	width: 317px;
+	top: 788px;
+	right: 100px;
+}
+#company-profile .timeline > div.e2014 .tit:before{
+	left: -20px;
+	border-right-color: #f58220;
+}
+#company-profile .timeline > div.event{
+	width: 280px!important;
+}
+#company-profile .map{
+	padding: 20px;
+	border: dashed 2px #8faaf3;
+	background-color: #f8f8f8;
+}
+#company-profile .map .tit{
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+body.cms-company-profile #main .main{
+	border: none;
+}
+body.cms-page-view.cms-company-profile .page-title{
+	border-width: 2px;
+}
+#company-profile .map p{
+	margin-bottom: 20px;
+}
+/*
+ * Country Cambodia
+ */
+.countries-tab{
+	width: 100%;
+	background-color: #dadbdc;
+}
+.countries-tab a{
+	display: inline-block;
+	width: 142px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	font-size: 21px;
+	background-color: #4571EB;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	text-decoration: none;
+	padding: 15px;
+}
+.countries-tab a.active{
+	background-color: #fff;
+	color: #4571EB;
+}
+.countries-tab a:hover{
+	background-color: #fff;
+	color: #4571EB;
+}
+body.cms-combodia .map{
+	height: 270px;
+}
+.map.cambodia{
+	background: url('../images/cms/cambodia.png') top left no-repeat;
+}
+.map.vietnam{
+	background: url('../images/cms/vietnam.png') top left no-repeat;
+	height: 317px;
+}
+.map .content{
+	margin-left: 220px;
+	padding-top: 90px;
+	text-align: center;
+	font-size: 17px;
+}
+.map .content .tit{
+	color: #fff;
+	font-weight: bold;
+	font-size: 25px;
+	text-shadow: 2px 0 0 #4571EB, -2px 0 0 #4571EB, 0 2px 0 #4571EB, 0 -2px 0 #4571EB, 2px 2px #4571EB, -2px -2px 0 #4571EB, 2px -2px 0 #4571EB, -2px 2px 0 #4571EB;
+	margin-bottom: 5px;
+}
+.map .content .small{
+	color: #555;
+	font-size: 14px;
+}
+.map .content .top .inline-b{
+	width: 24%;
+	color: #111c3b;
+}
+.map .content .bot{
+	margin-top: 40px;
+}
+.map .content .bot .inline-b{
+	width: 28%;
+	color: #111c3b;
+}
+.big-tit{
+	background: url('../images/cms/big-tit.png') left center no-repeat #d0dbfa;
+	color: #111c3b;
+}
+.big-tit .tit{
+	color: #fff;
+	font-weight: bold;
+	font-size: 40px;
+	text-shadow: 4px 0 0 #4571EB, -4px 0 0 #4571EB, 0 4px 0 #4571EB, 0 -4px 0 #4571EB, 4px 4px #4571EB, -4px -4px 0 #4571EB, 4px -4px 0 #4571EB, -4px 4px 0 #4571EB;
+	padding: 38px 55px;
+}
+.big-tit .sub-tit{
+	margin-right: 40px;
+	margin-top: 45px;
+}
+.big-tit .sub-tit ul li{
+	padding-left: 17px;
+	background: url('../images/cms/orange-icon.png') left 1px no-repeat;
+	color: #000;
+	font-weight: bold;
+	font-size: 17px;
+}
+.big-tit .sub-tit ul li span{
+	color: #555;
+	font-weight: normal;
+	font-size: 13px;
+}
+.info .tit{
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;
+	text-shadow: 2px 0 0 #4571EB, -2px 0 0 #4571EB, 0 2px 0 #4571EB, 0 -2px 0 #4571EB, 2px 2px #4571EB, -2px -2px 0 #4571EB, 2px -2px 0 #4571EB, -2px 2px 0 #4571EB;
+	text-align: center;
+	padding: 25px 0;
+}
+.info table{
+	width: 100%;
+	text-align: center;
+}
+.info table thead{
+	border-bottom: solid 1px #000;
+	border-top: solid 1px #000;
+}
+.info table thead tr td{
+	font-weight: bold;
+	color: #000;
+	background-color: #d0dbfa;
+}
+.info table tbody{
+	border-bottom: solid 1px #000;
+}
+.info table tr td+td{
+	border-left: solid 1px #000;
+	padding: 5px 10px;
+}
+.info table tbody tr td{
+	text-align: right;
+}
+.info table tbody tr td:first-child{
+	text-align: left;
+	padding-left: 20px;
+}
+.diagrams{
+	margin: 30px 0;
+}
+.diagrams .tit{
+	color: #fff;
+	font-weight: bold;
+	font-size: 18px;
+	text-shadow: 2px 0 0 #4571EB, -2px 0 0 #4571EB, 0 2px 0 #4571EB, 0 -2px 0 #4571EB, 2px 2px #4571EB, -2px -2px 0 #4571EB, 2px -2px 0 #4571EB, -2px 2px 0 #4571EB;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.diagrams p{
+	font-weight: bold;
+	text-align: center;
+	color: #000;
+	margin-top: 20px;
+}
+.diagrams .width-45{
+	text-align: center;
+}
+/*
+ * Country Vietnam
+ */
+.more-info{
+	padding: 30px;
+	background: url('../images/cms/tit-content.png') top left no-repeat;
+}
+.more-info.vietnam h2{
+	padding-left: 20px;
+}
+.more-info p{
+	font-weight: bold;
+	color: #000;
+	margin-top: 20px;
+}
+body.cms-vietnam .map .content {
+	padding-top: 100px;
+}
+body.cms-vietnam .map .content .top .inline-b,
+body.cms-vietnam .map .content .bot .inline-b{
+	width: auto;
+}
+body.cms-vietnam .map .content .inline-b+.inline-b{
+	margin-left: 70px;
+}
+.map .content .inline-b span{
+	font-size: 13px;
+	color: #555;
+}
+body.cms-vietnam .big-tit{
+	background: url('../images/cms/big-tit-vn.png') left center no-repeat #d0dbfa;
+}
+body.cms-vietnam .big-tit .tit{
+	padding: 0;
+	text-align: center;
+	margin-left: 40px;
+	margin-top: 30px;
+	margin-left: 25px;
+}
+body.cms-vietnam .big-tit .sub-tit{
+	margin: 0;
+	padding: 24px;
+	margin-right: 20px;
+}
+body.cms-vietnam .big-tit .sub-tit ul li{
+	font-size: 15px;
+}
+body.cms-vietnam .big-tit .sub-tit ul li p{
+	font-size: 20px;
+}
+/*
+ * Country Myanmar
+ */
+body.cms-myanmar .map .content .fll span{
+	font-size: 13px;
+	color: #555;
+}
+body.cms-myanmar .map{
+	background: url('../images/cms/myanmar.png') top left no-repeat;
+	height: 317px;
+}
+body.cms-myanmar .map .content{
+	margin-left: 175px;
+	padding-top: 35px;
+}
+body.cms-myanmar .map .content .fll>div+div{
+	margin-top: 40px;
+}
+body.cms-myanmar .map .content .fll+.fll{
+	margin-left: 20px;
+}
+body.cms-myanmar .map .content .fll:first-child+.fll{
+	margin-top: 30px;
+}
+body.cms-myanmar .map .content .fll:first-child+.fll+.fll{
+	margin-top: 20px;
+}
+body.cms-myanmar .big-tit{
+	background: url('../images/cms/big-tit-my.png') left 20px no-repeat #d0dbfa;
+	color: #111c3b;	
+}
+body.cms-myanmar .big-tit .tit{
+	padding: 45px 25px;
+	line-height: 50px;
+	text-align: center;
+}
+body.cms-myanmar .big-tit .other{
+	margin: 25px 35px;
+	padding: 25px;
+	border: solid 1px #4571EB;
+}
+body.cms-myanmar .big-tit .other ul li{
+	padding-left: 17px;
+	background: url('../images/cms/orange-icon.png') left 1px no-repeat;
+	font-size: 14px
+}
+body.cms-myanmar .big-tit .other ul li+li{
+	margin-top: 30px;
+}
+body.cms-myanmar .big-tit .other ul li p{
+	font-weight: bold;
+	font-size: 16px;
+}
+body.cms-myanmar .big-tit .sub-tit{
+	width: 50%;
+	margin-top: 0px;
+}
+body.cms-myanmar .big-tit .sub-tit ul li{
+	font-size: 13px;
+	font-weight: bold;
+	letter-spacing: -0.5px;
+	padding: 20px;
+	background: url('../images/cms/orange-icon.png') left 21px no-repeat;
+}
+body.cms-myanmar .big-tit .sub-tit ul li+li{
+	border-top: dashed 1px #4571EB;
+}
+body.cms-myanmar .big-tit .sub-tit ul li p{
+	font-size: 16px;
+	font-weight: bold;
+}
+body.cms-myanmar .diagrams .flr.width-45{
+	text-align: left;
+	width: 38%;
+	margin-right: 80px;
+}
+body.cms-myanmar .diagrams .flr.width-45 p{
+	text-align: left;
+}
+body.cms-myanmar .more-info{
+	text-align: center;
+}
+/*
+ * Country Indonesia
+ */
+body.cms-indonesia .map{
+	background: url('../images/cms/indonesia.png') top left no-repeat;
+	height: 311px;
+}
+body.cms-indonesia .map .content{
+	margin-left: 310px;
+	padding-top: 30px;
+}
+body.cms-indonesia .map .content .inline-b{
+	width: auto;
+	line-height: 19px;
+}
+body.cms-indonesia .map .content .inline-b .tit{
+	margin-bottom: 10px;
+}
+body.cms-indonesia .map .content .inline-b+.inline-b{
+	margin-left: 30px;
+}
+body.cms-indonesia .map .content .mid{
+	margin-top: 30px;
+}
+body.cms-indonesia .map .content .bot{
+	margin-top: 30px;
+}
+body.cms-indonesia .map .content .bot .inline-b span{
+	font-size: 11px;
+}
+body.cms-indonesia .info > .fll{
+	background-color: #d0dbfa;
+}
+body.cms-indonesia .info > .fll .tit{
+	text-shadow: 4px 0 0 #4571EB, -4px 0 0 #4571EB, 0 4px 0 #4571EB, 0 -4px 0 #4571EB, 4px 4px #4571EB, -4px -4px 0 #4571EB, 4px -4px 0 #4571EB, -4px 4px 0 #4571EB;
+}
+body.cms-indonesia .info > .fll h2.tit{
+	background-color: #8faaf3;
+	margin-top: 20px;
+	padding-left: 55px;
+	text-align: left;
+	font-size: 38px;
+	margin-bottom: 30px;
+}
+body.cms-indonesia .info > .fll .text{
+	padding-left: 55px;
+	padding-right: 30px;
+}
+body.cms-indonesia .info div.img{
+	margin: 20px 0;
+	text-align: center;
+}
+body.cms-indonesia .info > .flr h2.tit{
+	margin-top: 40px;
+	padding: 0;
+	padding-left: 40px;
+	text-align: left;
+	font-size: 23px;
+	margin-bottom: 20px;
+}
+body.cms-indonesia .info > .flr .text{
+	padding: 0 40px;
+	font-size: 13px;
+	letter-spacing: -1px;
+}
+body.cms-indonesia .info > .flr .img img{
+	border: solid 1px #ddd;
+}
+body.cms-indonesia .more-info-with-toggle{
+	padding: 25px 50px;
+	padding-bottom: 50px;
+}
+body.cms-indonesia .more-info-with-toggle h3.orange-icon-tit{
+	padding-left: 25px;
+	background: url('../images/cms/orange-icon.png') left center no-repeat;
+	color: #4571EB;
+	font-weight: bold;
+	font-size: 21px;
+	margin: 30px 0;
+}
+body.cms-indonesia .more-info-with-toggle .toggle-content a.toggle{
+	display: block;
+	padding: 10px 35px;
+	background: url('../images/cms/toggle.png') 12px center no-repeat #ced9f6;
+	font-weight: bold;
+	text-decoration: none;
+	color: #111C3B;
+	border-radius: 4px;
+}
+body.cms-indonesia .more-info-with-toggle .toggle-content a.toggle.active{
+	background: url('../images/cms/toggle-active.png') 12px center no-repeat #ced9f6;
+}
+body.cms-indonesia .more-info-with-toggle .toggle-content .content{
+	display: none;
+	padding: 20px 5px;
+}
+body.cms-indonesia .more-info-with-toggle .toggle-content+.toggle-content{
+	margin-top: 10px;
+}
+/*
+ * Country India
+ */
+body.cms-india .map{
+	background: url('../images/cms/india.png') top left no-repeat;
+	height: 309px;
+}
+body.cms-india .map .content{
+	margin-left: 280px;
+	padding-top: 40px;
+}
+body.cms-india .map .content .fll+.fll{
+	margin-left: 20px;
+}
+body.cms-india .map .content .fll >div+div{
+	margin-top: 30px;
+}
+body.cms-india .map .content .fll .tit{
+	line-height: 30px;
+	margin-bottom: 0;
+}
+body.cms-india .map .content .fll+.fll >div+div{
+	margin-top: 50px;
+}
+body.cms-india .map .content .fll span{
+	font-size: 13px;
+}
+body.cms-india .info > .fll{
+	background-color: #d0dbfa;
+}
+body.cms-india .info > .fll h2.tit{
+	text-align: left;
+	padding-left: 40px;
+	font-size: 36px;
+	text-shadow: 4px 0 0 #4571EB, -4px 0 0 #4571EB, 0 4px 0 #4571EB, 0 -4px 0 #4571EB, 4px 4px #4571EB, -4px -4px 0 #4571EB, 4px -4px 0 #4571EB, -4px 4px 0 #4571EB;
+	background-color: #8faaf3;
+	margin-top: 10px;
+}
+body.cms-india .info > .fll ul{
+	padding: 0 30px;
+	margin-bottom: 70px;
+}
+body.cms-india .info > .fll ul li{
+	padding-left: 18px;
+	background: url('../images/cms/orange-icon.png') left 3px no-repeat;
+	margin-top: 30px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	font-size: 13px;
+}
+body.cms-india .info > .fll ul li strong{
+	font-size: 16px;
+}
+body.cms-india .info > .flr .tit{
+	font-size: 24px;
+	text-align: left;
+	padding-left: 40px;
+}
+body.cms-india .info > .flr .text{
+	padding: 0 40px;
+}
+body.cms-india .info > .flr .text span{
+	font-size: 12px;
+	letter-spacing: -1px;
+}
+body.cms-india .more-info-india .tit{
+	color: #fff;
+	font-weight: bold;
+	font-size: 22px;
+	text-shadow: 2px 0 0 #4571EB, -2px 0 0 #4571EB, 0 2px 0 #4571EB, 0 -2px 0 #4571EB, 2px 2px #4571EB, -2px -2px 0 #4571EB, 2px -2px 0 #4571EB, -2px 2px 0 #4571EB;
+	text-align: left;
+	margin-bottom: 20px;
+	padding: 35px;
+	padding-bottom: 0;
+}
+body.cms-india .more-info-india .fll,
+body.cms-india .more-info-india .flr{
+	width: 410px;
+	font-size: 13px;
+}
+body.cms-india .more-info-india .fll{
+	padding-left: 35px;
+}
+body.cms-india .more-info-india .img{
+	text-align: center;
+	margin-bottom: 50px;
+}
+body.cms-india .more-info-india .img p{
+	font-weight: bold;
+	font-size: 15px;
+	margin: 30px 0;
+}
+/*
+ * privacy-policy
+ */
+#privacy-policy{
+	padding: 25px 65px;
+	padding-bottom: 70px;
+}
+#privacy-policy h2.cms-blue-tit{
+	font-size: 17px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
