@@ -1,9 +1,10 @@
 <?php
  
-class Iconic_Job_Model_Mysql4_SalaryType extends Mage_Core_Model_Mysql4_Abstract
+class Iconic_Job_Model_SalaryType extends Mage_Core_Model_Abstract
 {
     public function _construct()
-    {   
-        $this->_init('job/salary_type');
+    {
+        parent::_construct();
+        $this->_init('job/salaryType');
     }
 }

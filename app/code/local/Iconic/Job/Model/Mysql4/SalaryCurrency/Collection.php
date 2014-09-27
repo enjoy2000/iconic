@@ -5,6 +5,6 @@ class Iconic_Job_Model_Mysql4_SalaryCurrency_Collection extends Mage_Core_Model_
     public function _construct()
     {
         //parent::__construct();
-        $this->_init('job/salary_currency');
+        $this->_init('job/salaryCurrency');
     }
 }

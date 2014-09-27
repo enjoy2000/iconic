@@ -101,8 +101,8 @@ class Iconic_Job_Model_Job extends Mage_Core_Model_Abstract
 	}
 	
 	public function getFullSalary(){
-        $salaryCurrency = Mage::getModel('job/salarycurrency')->load($this->getJobSalaryCurrency())->getShortName();
-        $salaryType = Mage::getModel('job/salarytype')->load($this->getJobSalaryType())->getName();
+        $salaryCurrency = Mage::getModel('job/salaryCurrency')->load($this->getJobSalaryCurrency())->getShortName();
+        $salaryType = Mage::getModel('job/salaryType')->load($this->getJobSalaryType())->getName();
 		if($this->getJobSalary() && $this->getJobSalaryTo()){
 			$salary = $salaryCurrency . $this->getJobSalary() . ' - ' . $this->getJobSalaryTo() . '(' .$salaryType . ')';
 		}else if($this->getJobSalary() && !$this->getJobSalaryTo()){

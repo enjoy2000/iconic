@@ -40,7 +40,7 @@ CREATE TABLE {$this->getTable('job/job')} (
   ,`update_time` datetime NULL  DEFAULT NULL
   ,`url_key` varchar(255) NOT NULL
   ,`job_salary_to` int(11) NULL  DEFAULT 0
-  ,`job_salary_currency` int(3) NOT NULL
+  ,`job_salaryCurrency` int(3) NOT NULL
   ,`function_category_id` int(11) NOT NULL
   ,`job_salary_type` int(3) NOT NULL
   ,`id_job_id` varchar(11) NOT NULL
@@ -117,7 +117,7 @@ CREATE TABLE {$this->getTable('job/type')} (
   ,CONSTRAINT PK_mjobtype PRIMARY KEY (type_id)
 );
 
-CREATE TABLE {$this->getTable('job/salary_currency')} (
+CREATE TABLE {$this->getTable('job/salaryCurrency')} (
    `id` int(11) AUTO_INCREMENT NOT NULL
   ,`short_name` varchar(5) NOT NULL
   ,`name` varchar(50) NOT NULL

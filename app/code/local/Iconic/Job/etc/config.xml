@@ -92,14 +92,14 @@
                 <class>Iconic_Job_Model_Langlevel</class>
                 <resourceModel>job_langlevel</resourceModel>
             </langlevel>
-            <salarycurrency>
-                <class>Iconic_Job_Model_Salarycurrency</class>
-                <resourceModel>job_salarycurrency</resourceModel>
-            </salarycurrency>
-            <salarytype>
-                <class>Iconic_Job_Model_Salarytype</class>
-                <resourceModel>job_salarytype</resourceModel>
-            </salarytype>
+            <salaryCurrency>
+                <class>Iconic_Job_Model_SalaryCurrency</class>
+                <resourceModel>job_salaryCurrency</resourceModel>
+            </salaryCurrency>
+            <salaryType>
+                <class>Iconic_Job_Model_SalaryType</class>
+                <resourceModel>job_salaryType</resourceModel>
+            </salaryType>
             <status>
                 <class>Iconic_Job_Model_Status</class>
                 <resourceModel>job_status</resourceModel>
@@ -140,12 +140,12 @@
                     <langlevel>
                         <table>m_job_langlevel</table>
                     </langlevel>
-                    <salarycurrency>
+                    <salaryCurrency>
                         <table>m_salary_currency</table>
-                    </salary_currency>
-                    <salary_type>
+                    </salaryCurrency>
+                    <salaryType>
                         <table>m_salary_type</table>
-                    </salarytype>
+                    </salaryType>
                 </entities>
             </job_mysql4>
         </models>

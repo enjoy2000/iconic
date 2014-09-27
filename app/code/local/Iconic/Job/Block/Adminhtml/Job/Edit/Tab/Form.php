@@ -131,11 +131,11 @@ class Iconic_Job_Block_Adminhtml_Job_Edit_Tab_Form extends Mage_Adminhtml_Block_
             'value'		=> '0',
         ));
 		
-		$fieldset->addField('job_salary_currency', 'select', array(
+		$fieldset->addField('job_salaryCurrency', 'select', array(
             'label'     => Mage::helper('job')->__('Salary Currency'),
             'class'     => 'required-entry',
             'required'  => true,
-            'name'      => 'job_salary_currency',
+            'name'      => 'job_salaryCurrency',
             'values'    => array(
             			array(
 							'label' => 'JPY',

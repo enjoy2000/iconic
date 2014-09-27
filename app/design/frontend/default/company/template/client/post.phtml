@@ -40,11 +40,11 @@
 			<input class="last" type="number" name="job_salary_to" placeholder="<?php echo $this->__('想定給与（上限）') ?>" value="<?php echo $data['job_salary_to'] ?>" />
 		</li>
 		<li class="row2">
-			<select class="first" required name="job_salary_currency">
+			<select class="first" required name="job_salaryCurrency">
 				<option value=""><?php echo $this->__('通貨') ?> *</option>
-				<option<?php echo ($data['job_salary_currency']=='JPY') ? ' selected="selected"' : '' ?> value="JPY">JPY</option>
-				<option<?php echo ($data['job_salary_currency']=='VND') ? ' selected="selected"' : '' ?> value="VND">VND</option>
-				<option<?php echo ($data['job_salary_currency']=='USD') ? ' selected="selected"' : '' ?> value="USD">USD</option>
+				<option<?php echo ($data['job_salaryCurrency']=='JPY') ? ' selected="selected"' : '' ?> value="JPY">JPY</option>
+				<option<?php echo ($data['job_salaryCurrency']=='VND') ? ' selected="selected"' : '' ?> value="VND">VND</option>
+				<option<?php echo ($data['job_salaryCurrency']=='USD') ? ' selected="selected"' : '' ?> value="USD">USD</option>
 			</select>
 			<select class="last" required name="job_salary_type">
 				<option value=""><?php echo $this->__('給与タイプ') ?> *</option>

@@ -65,14 +65,17 @@ class Iconic_Job_Block_Search_Form extends Iconic_Job_Block_Search
 	public function getLocationList(){
 		//get list location and category
 		if (!$this->hasData('locationList')){
-			$countries = Mage::getModel('job/country')->getCollection()->addFieldToFilter('job_flag', array('like'=>1));
+			$countries = Mage::getModel('job/country')->getCollection()
+                            ->addFieldToFilter('job_flag', array('like'=>1));
 			$listLocation = '';
 			foreach($countries as $country){
 				$selected = '';
 				if(in_array($country->getId(), $this->getMultiLocation())){
 					$selected = ' selected="selected"';
 				}
-				$listLocation .= '<option'. $selected .' value="'.$country->getId().'">'.Mage::helper('job')->getTransName($country).'</option>';		
+				$listLocation .= '<option'. $selected .' value="'.$country->getId().'">'
+                                    .Mage::helper('job')->getTransName($country).
+                                 '</option>';
 			}	
 			$this->setData('locationList', $listLocation);
 		}
@@ -81,7 +84,8 @@ class Iconic_Job_Block_Search_Form extends Iconic_Job_Block_Search
 	
 	public function getCategoryList(){
 		if (!$this->hasData('categoryList')){
-			$parentCategory = Mage::getModel('job/parentcategory')->getCollection()->addFieldToFilter('group_category', array('eq'=>'industry'));
+			$parentCategory = Mage::getModel('job/parentcategory')->getCollection()
+                ->addFieldToFilter('group_category', array('eq'=>'industry'));
 			$listCategory = '';
 			foreach ($parentCategory as $parent){
 				$parentname = Mage::helper('job')->getTransName($parent);
@@ -98,7 +102,8 @@ class Iconic_Job_Block_Search_Form extends Iconic_Job_Block_Search
 
 	public function getFunctionList(){
 		if (!$this->hasData('functionList')){
-			$parentCategory = Mage::getModel('job/parentcategory')->getCollection()->addFieldToFilter('group_category', array('eq'=>'function'));
+			$parentCategory = Mage::getModel('job/parentcategory')->getCollection()
+                ->addFieldToFilter('group_category', array('eq'=>'function'));
 			$listCategory = '';
 			foreach ($parentCategory as $parent){
 				$parentname = Mage::helper('job')->getTransName($parent);

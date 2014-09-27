@@ -4,6 +4,6 @@ class Iconic_Job_Model_Mysql4_SalaryCurrency extends Mage_Core_Model_Mysql4_Abst
 {
     public function _construct()
     {   
-        $this->_init('job/salary_currency');
+        $this->_init('job/salaryCurrency', 'id');
     }
 }

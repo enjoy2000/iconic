@@ -19,10 +19,10 @@ CREATE TABLE {$this->getTable('resume/resume')} (
   ,`mobile` int(11) NOT NULL
   ,`email` varchar(50) NOT NULL
   ,`current_salary` int(11) NULL  DEFAULT NULL
-  ,`current_salary_currency` int(3) NULL  DEFAULT NULL
+  ,`current_salaryCurrency` int(3) NULL  DEFAULT NULL
   ,`current_salary_type` int(3) NULL  DEFAULT NULL
   ,`expected_salary` int(11) NOT NULL
-  ,`expected_salary_currency` int(3) NOT NULL
+  ,`expected_salaryCurrency` int(3) NOT NULL
   ,`expected_salary_type` int(3) NOT NULL
   ,`expected_industry` int(11) NOT NULL
   ,`expected_function` int(11) NOT NULL

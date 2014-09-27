@@ -307,12 +307,7 @@ class Iconic_Job_Helper_Data extends Mage_Core_Helper_Abstract
 	
 	/* Check locale and get name in Japanese or English */
 	public function getTransName($obj){
-		$storeCode = Mage::app()->getStore()->getCode();
-		if($storeCode == 'jp' || $storeCode == 'cpjp'){
-			return $obj->getName();
-		}else{
-			return $obj->getNameEn();
-		}
+		return $this->__($obj->getName());
 	}
 	
 	/* Get base url of website base on store view */

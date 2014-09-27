@@ -149,7 +149,7 @@ class Iconic_Client_Block_Adminhtml_Job_Edit_Tab_Form extends Mage_Adminhtml_Blo
             'label'     => Mage::helper('job')->__('Salary Currency'),
             'class'     => 'required-entry',
             'required'  => true,
-            'name'      => 'job_salary_currency',
+            'name'      => 'job_salaryCurrency',
             'values'    => array(
             			array(
 							'label' => 'JPY',

@@ -8,7 +8,7 @@ class Iconic_Job_Block_Newest extends Mage_Core_Block_Template
 		
 		//set collection to view
 		$jobs = Mage::getModel('job/job')->getCollection()
-						->addFieldToFilter('status', array('like'=>'active'))
+						->addFieldToFilter('status', array('like' => 1))
 						->setOrder('created_time','DESC');
 		$jobs->setPageSize(10);
 		$jobs->setCurPage(1);
@@ -28,4 +28,11 @@ class Iconic_Job_Block_Newest extends Mage_Core_Block_Template
 		$lang = Mage::getModel('job/language')->getCollection();
 		$this->setLanguageCollection($lang);
 	}
+
+    public function getCountryList(){
+        $countries = Mage::getModel('job/country')->getCollection()
+                            ->addFieldToFilter('job_flag', array('like' => 1));
+
+        return $countries;
+    }
 }

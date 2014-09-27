@@ -4,6 +4,6 @@ class Iconic_Job_Model_Mysql4_SalaryType extends Mage_Core_Model_Mysql4_Abstract
 {
     public function _construct()
     {   
-        $this->_init('job/salary_type');
+        $this->_init('job/salaryType', 'id');
     }
 }

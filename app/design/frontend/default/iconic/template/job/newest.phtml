@@ -10,7 +10,7 @@
 			<?php $country = Mage::getModel('job/country')->load((int)$countryId[1]) ?>
 			<li>
 				<div class="top clearfix">
-					<img class="fll" src="<?php echo $this->getSkinUrl('images/country/'.$country->getUrlKey().'.png') ?>" alt="" />
+					<img width="25" height="15" class="fll flag flag-<?php echo strtolower($country->getCode()) ?>" src="<?php echo $this->getSkinUrl('images/blank.gif') ?>" alt="" />
 					<span class="fll location-name"><?php echo Mage::helper('job')->getTransName($country) ?></span>
 					<div class="date flr">
 						<?php echo Mage::helper('job')->formatDate($job->getCreatedTime()) ?>
@@ -72,18 +72,16 @@
 			    <area data-search="laos" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/laos" shape="poly" coords="298,289,289,291,287,301,297,308,295,321,310,318,321,319,332,340,333,350,344,349,342,340,335,327,325,318,314,308,317,304,323,300,315,297,304,289,303,284,300,284" style="outline:none;" target="_self"     />
 			    <area data-search="thailand" alt="" title="" href="<?php echo Mage::helper('job')->getBaseUrl() ?>search-job/thailand" shape="poly" coords="270,346,280,369,293,367,302,369,305,356,316,351,329,352,327,342,323,333,322,322,312,319,293,327,291,318,293,310,282,300,267,305,264,319" style="outline:none;" target="_self"     />
 			</map>
-			<?php 
-			$countries = Mage::getModel('job/country')->getCollection();
-			foreach($countries as $country): ?>
+			<?php foreach($this->getCountryList() as $country): ?>
 			<img alt="" data-search="<?php echo $country->getUrlKey() ?>" class="<?php echo $country->getUrlKey() ?> country" src="<?php echo $this->getSkinUrl('images/map/'.$country->getUrlKey().'.png') ?>" />
 			<p data-search="<?php echo $country->getUrlKey() ?>" class="<?php echo $country->getUrlKey() ?>"><?php echo Mage::helper('job')->getTransName($country) ?></p>
 			<?php endforeach; ?>
 			
 			<div class="location">
-				<?php foreach($this->getCountryCollection() as $country): ?>
+				<?php foreach($this->getCountryList() as $country): ?>
 				<div class="country <?php echo str_replace(' ', '', strtolower($country->getNameEn())) ?>">
 					<h3 class="clearfix">
-						<img alt="" class="fll" src="<?php echo $this->getSkinUrl('images/country/'.$country->getUrlKey().'.png') ?>" />
+						<img width="25" height="15" alt="" class="fll flag flag-<?php echo strtolower($country->getCode()) ?>" src="<?php echo $this->getSkinUrl('images/blank.gif') ?>" />
 						<a class="fll" href="<?php echo $country->getUrl() ?>"><?php echo Mage::helper('job')->getTransName($country) ?> <span>(<?php echo $country->getCount() ?>)</span></a>
 					</h3>
 				</div>
