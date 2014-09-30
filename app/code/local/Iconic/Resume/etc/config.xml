@@ -76,17 +76,17 @@
                     <module>Iconic_Resume</module>
                 </setup>
                 <connection>
-                    <use>core_setup</use>
+                    <use>external_database</use>
                 </connection>
             </resume_setup>
             <resume_write>
                 <connection>
-                    <use>core_write</use>
+                    <use>external_database</use>
                 </connection>
             </resume_write>
             <resume_read>
                 <connection>
-                    <use>core_read</use>
+                    <use>external_database</use>
                 </connection>
             </resume_read>
         </resources>
