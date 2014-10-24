@@ -5,6 +5,7 @@ $installer->startSetup();
 
 $installer->run("
 
+DROP TABLE IF EXISTS {$this->getTable('blog/blog')} CASCADE;
 CREATE TABLE {$this->getTable('blog/blog')} (
    `blog_id` int(11) AUTO_INCREMENT NOT NULL
   ,`title` varchar(255) NOT NULL
@@ -26,6 +27,7 @@ CREATE TABLE {$this->getTable('blog/blog')} (
   ,CONSTRAINT PK_tblog PRIMARY KEY (blog_id)
 );
 
+DROP TABLE IF EXISTS {$this->getTable('blog/author')} CASCADE;
 CREATE TABLE {$this->getTable('blog/author')} (
    `author_id` int(11) AUTO_INCREMENT NOT NULL
   ,`name` varchar(255) NOT NULL
@@ -35,6 +37,7 @@ CREATE TABLE {$this->getTable('blog/author')} (
   ,CONSTRAINT PK_mblogauthor PRIMARY KEY (author_id)
 );
 
+DROP TABLE IF EXISTS {$this->getTable('blog/category')} CASCADE;
 CREATE TABLE {$this->getTable('blog/category')} (
    `category_id` int(11) AUTO_INCREMENT NOT NULL
   ,`parentcategory_id` int(11) NOT NULL
@@ -44,6 +47,7 @@ CREATE TABLE {$this->getTable('blog/category')} (
   ,CONSTRAINT PK_mblogcategory PRIMARY KEY (category_id)
 );
 
+DROP TABLE IF EXISTS {$this->getTable('blog/parentcategory')} CASCADE;
 CREATE TABLE {$this->getTable('blog/parentcategory')} (
    `parentcategory_id` int(11) AUTO_INCREMENT NOT NULL
   ,`name` varchar(255) NOT NULL
@@ -52,6 +56,7 @@ CREATE TABLE {$this->getTable('blog/parentcategory')} (
   ,CONSTRAINT PK_mblogparentcategory PRIMARY KEY (parentcategory_id)
 );
 
+DROP TABLE IF EXISTS {$this->getTable('blog/pingserver')} CASCADE;
 CREATE TABLE {$this->getTable('blog/pingserver')} (
    `server_id` int(11) AUTO_INCREMENT NOT NULL
   ,`url` varchar(255) NOT NULL
@@ -59,87 +64,5 @@ CREATE TABLE {$this->getTable('blog/pingserver')} (
 );
 
 ");
-
-
-$trans = Mage::helper('job');
-
-$setup = Mage::getModel('customer/entity_setup');
-$installer->addAttribute('customer', 'sex', array(
-    'type' => 'varchar',
-    'input' => 'select',
-    'label' => $trans->__('Giới tính'),
-    'global' => 1,
-    'visible' => 1,
-    'required' => 1,
-    'user_defined' => 1,
-    'default' => '0',
-    'visible_on_front' => 1,
-    'source' => 'job/entity_sex',
-));
-
-$installer->addAttribute('customer', 'location', array(
-    'type' => 'int',
-    'input' => 'select',
-    'label' => $trans->__('Địa chỉ'),
-    'global' => 1,
-    'visible' => 1,
-    'required' => 1,
-    'user_defined' => 1,
-    'default' => '0',
-    'visible_on_front' => 1,
-    'source' => 'job/entity_location',
-));
-
-$installer->addAttribute('customer', 'birth_year', array(
-    'type' => 'int',
-    'input' => 'select',
-    'label' => $trans->__('Năm sinh'),
-    'global' => 1,
-    'visible' => 1,
-    'required' => 1,
-    'user_defined' => 1,
-    'default' => '0',
-    'visible_on_front' => 1,
-    'source' => 'job/entity_birth_year',
-));
-
-$installer->addAttribute('customer', 'upload_cv', array(
-    'type' => 'varchar',
-    'input' => 'input',
-    'label' => $trans->__('CV'),
-    'global' => 1,
-    'visible' => 1,
-    'required' => 0,
-    'user_defined' => 1,
-    'default' => '0',
-    'visible_on_front' => 1,
-    'source' => 'job/entity_upload_cv',
-));
-
-$installer->addAttribute('customer', 'pic', array(
-    'type' => 'varchar',
-    'input' => 'text',
-    'label' => $trans->__('PIC'),
-    'global' => 1,
-    'visible' => 1,
-    'required' => 0,
-    'user_defined' => 1,
-    'default' => '0',
-    'visible_on_front' => 1,
-    'source' => 'job/entity_pic',
-));
-
-$installer->addAttribute('customer', 'phone', array(
-    'type' => 'int',
-    'input' => 'text',
-    'label' => $trans->__('Phone'),
-    'global' => 1,
-    'visible' => 1,
-    'required' => 0,
-    'user_defined' => 1,
-    'default' => '0',
-    'visible_on_front' => 1,
-    'source' => 'job/entity_phone',
-));
 
 $installer->endSetup();

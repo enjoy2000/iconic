@@ -18,7 +18,7 @@ class Iconic_Blog_DetailController extends Mage_Core_Controller_Front_Action
 			//breadcrumbs
 			$helper = Mage::helper('blog');
 			if ($breadcrumbs = $this->getLayout()->getBlock('breadcrumbs')) {
-				$breadcrumbs->addCrumb('home', array('label'=>$helper->__('ホーム'), 'title'=>$helper->__('ホーム'), 'link'=>Mage::helper('job')->getBaseUrl()));
+				$breadcrumbs->addCrumb('home', array('label'=>$helper->__('ホーム'), 'title'=>$helper->__('ホーム'), 'link'=>Mage::getBaseUrl()));
 				$breadcrumbs->addCrumb('blog', array('label'=>$helper->__('ブログ'), 'title'=>$helper->__('ブログ'), 'link'=>Mage::getUrl(Mage::helper('blog')->getRoute())));
 				$breadcrumbs->addCrumb('blog_title', array('label'=>$blog->getTitle(), 'title'=>$blog->getTitle()));
 			}

@@ -384,16 +384,9 @@ class Iconic_Job_Helper_Data extends Mage_Core_Helper_Abstract
 	}
 	
 	/* Mail config for sending with SMTP */
-	public function getMailConfig(){
-		$config = array(
-	                    'auth' => 'login',
-	                    'ssl'  => 'tls',
-					    'port' =>  587,
-					    'username' => 'info@iconic-jp.com',
-					    'password' => 'bsc393939'
-						);
-		$transport = new Zend_Mail_Transport_Smtp('smtp.gmail.com', $config);
-		return $transport;
-	}
+    public function getMailConfig(){
+        $transport = Mage::helper('smtppro')->getTransport();
+        return $transport;
+    }
 }
 	

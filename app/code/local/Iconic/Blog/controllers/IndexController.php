@@ -8,7 +8,7 @@ class Iconic_Blog_IndexController extends Mage_Core_Controller_Front_Action
 		//breadcrumbs
 		$helper = Mage::helper('blog');
 		if ($breadcrumbs = $this->getLayout()->getBlock('breadcrumbs')) {
-			$breadcrumbs->addCrumb('home', array('label'=>$helper->__('ホーム'), 'title'=>$helper->__('ホーム'), 'link'=>Mage::helper('job')->getBaseUrl()));
+			$breadcrumbs->addCrumb('home', array('label'=>$helper->__('ホーム'), 'title'=>$helper->__('ホーム'), 'link'=>Mage::getBaseUrl()));
 			$breadcrumbs->addCrumb('blog', array('label'=>$helper->__('ブログ'), 'title'=>$helper->__('ブログ'), 'link'=>Mage::getUrl(Mage::helper('blog')->getRoute())));
 		}
 		
@@ -19,21 +19,21 @@ class Iconic_Blog_IndexController extends Mage_Core_Controller_Front_Action
 			$parentArr = array($parent);
 			$catBlock->setParent($parentArr);
 			$parent = Mage::getModel('blog/parentcategory')->load($parent);
-			$tit .= '|'.Mage::helper('job')->getTransName($parent);
-			$breadcrumbs->addCrumb('parent', array('label'=>Mage::helper('job')->getTransName($parent), 'title'=>Mage::helper('job')->getTransName($parent), 'link'=>$parent->getUrl()));
+			$tit .= '|'.Mage::helper('blog')->getTransName($parent);
+			$breadcrumbs->addCrumb('parent', array('label'=>Mage::helper('blog')->getTransName($parent), 'title'=>Mage::helper('blog')->getTransName($parent), 'link'=>$parent->getUrl()));
 		}
 		
 		if($authorId = $this->getRequest()->getParam('author')){
 			$author = Mage::getModel('blog/author')->load($authorId);
-			$tit .= '|'.Mage::helper('job')->getTransName($author);
-			$breadcrumbs->addCrumb('author', array('label'=>Mage::helper('job')->getTransName($author), 'title'=>Mage::helper('job')->getTransName($author), 'link'=>$author->getUrl()));
+			$tit .= '|'.Mage::helper('blog')->getTransName($author);
+			$breadcrumbs->addCrumb('author', array('label'=>Mage::helper('blog')->getTransName($author), 'title'=>Mage::helper('blog')->getTransName($author), 'link'=>$author->getUrl()));
 		}
 		if($cat = $this->getRequest()->getParam('cat')){
 			$catArr = array($cat);
 			$catBlock->setCat($catArr);
 			$cat = Mage::getModel('blog/category')->load($cat);
-			$tit .= '|'.Mage::helper('job')->getTransName($cat);
-			$breadcrumbs->addCrumb('cat', array('label'=>Mage::helper('job')->getTransName($cat)));
+			$tit .= '|'.Mage::helper('blog')->getTransName($cat);
+			$breadcrumbs->addCrumb('cat', array('label'=>Mage::helper('blog')->getTransName($cat)));
 		}
 		$collection = Mage::getModel('blog/blog')->getCollection();
 		
@@ -98,7 +98,7 @@ class Iconic_Blog_IndexController extends Mage_Core_Controller_Front_Action
 	public function searchAction(){
 		if($keyword = $this->getRequest()->getParam('q')){
 			Mage::getSingleton('core/session')->setBlogSearch($keyword);
-			$this->_redirect(Mage::helper('blog')->getRoute() . DS . Mage::helper('job')->formatUrlKeyJp($keyword));
+			$this->_redirect(Mage::helper('blog')->getRoute() . DS . Mage::helper('blog')->formatUrlKeyJp($keyword));
 			return;
 		}else{
 			Mage::getSingleton('core/session')->unsBlogSearch();
